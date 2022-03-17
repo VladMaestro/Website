@@ -1,0 +1,25 @@
+.benefits {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 150px;
+}
+
+.benefit {
+	max-width: 255px;
+}
+
+.benefit__emoji {
+	display: inline-block;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.benefit__text {
+	margin: 0;
+	line-height: 1.4;
+}
+
+.benefit__accent {
+	color: var(--accent);
+	font-weight: 500;
+}

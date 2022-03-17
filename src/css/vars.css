@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--bg-color: hsl(0, 0%, 100%);
+	--main-text: hsl(0, 0%, 0%);
+ --accent: hsl(35, 100%, 63%);
+	--accent-light: hsl(35, 100%, 73%);
+}

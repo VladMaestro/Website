@@ -1,0 +1,39 @@
+.preview {
+	padding-top: 0;
+}
+
+.preview__hero {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-bottom: 50px;
+}
+
+.preview__info {
+	max-width: 700px;
+	align-self: center;
+}
+
+.preview__title {
+	font-size: 34px;
+	line-height: 1.4;
+	margin: 0 0 40px 0;
+}
+
+.preview__text {
+	font-size: 20px;
+	line-height: 1.4;
+	margin: 0 0 10px 0;
+}
+
+.preview__text:last-of-type {
+	margin-bottom: 40px;
+}
+
+.preview__img {
+	height: 400px;
+	width: 400px;
+	border-radius: 50%;
+	object-fit: cover;
+	justify-self: center;
+	margin-left: 80px;
+}

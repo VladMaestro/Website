@@ -1,0 +1,4 @@
+.contacts__email {
+	color: var(--main-text);
+	text-decoration: none;
+}

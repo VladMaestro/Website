@@ -1,0 +1,26 @@
+.button {
+	background-color: var(--accent);
+	border-radius: 7px;
+	border: none;
+	padding: 10px 20px;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+	transition: box-shadow .2s ease;
+}
+
+.button:hover {
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button--light {
+	background-color: transparent;
+	border: 2px solid var(--accent);
+	padding: 6px 10px;
+	font-size: 16px;
+	color: var(--accent);
+}
+
+.button--full {
+	width: 100%;
+}

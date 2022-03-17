@@ -1,0 +1,31 @@
+@import "grid.css";
+@import "typography.css";
+
+@import "header.css";
+@import "navigation.css";
+@import "contacts.css";
+@import "benefits.css";
+@import "button.css";
+@import "slider.css";
+
+@import "body.css";
+
+@import "modal.css";
+
+@import "preview.css";
+
+@import "lesson.css";
+
+@import "extra.css";
+
+@import "author.css";
+
+@import "services.css";
+
+@import "reviews.css";
+
+@import "calendar.css";
+
+@import "footer.css";
+
+

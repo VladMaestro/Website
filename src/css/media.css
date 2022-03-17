@@ -1,0 +1,202 @@
+@media screen and (max-width: 1300px) {
+	/* Lesson */
+	.lesson__text {
+		font-size: 20px;
+	}
+
+	.lesson__item {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 1260px) {
+	/* Preview */
+	.preview__title {
+		font-size: 30px;
+	}
+
+	.preview__text{
+		font-size: 16px;
+	}
+
+	.preview__img {
+		width: 300px;
+		height: 300px;
+	}
+
+	/* Benefits */
+	.benefit__emoji {
+		font-size: 18px;
+	}
+
+	/* Author */
+	.author__hero {
+		grid-template-columns: 1fr 1.5fr;
+	}
+
+	.author__title{
+		font-size: 30px;
+	}
+
+	.author__text{
+		font-size: 16px;
+	}
+
+	.author__img{
+		width: 300px;
+		height: 300px
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	/* Preview */
+	.preview__title {
+		font-size: 26px;
+	}
+
+	.preview__img {
+		width: 250px;
+		height: 250px;
+	}
+
+	.preview__button {
+		font-size: 16px;
+	}
+
+	/* Benefits */
+	.benefit__emoji {
+		font-size: 16px;
+	}
+
+	/* Lesson */
+	.lesson__container {
+		flex-direction: column;
+	}
+
+	.lesson__wrap {
+		text-align: center;
+	}
+
+	.lesson__container {
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	/* Extra */
+	.extra__title {
+		font-size: 18px;
+	}
+
+	.extra__text {
+		font-size: 16px;
+	}
+
+	.extra__emoji {
+		font-size: 36px;
+	}
+
+	/* Author */
+	.author__img{
+		width: 250px;
+		height: 250px
+	}
+}
+
+@media screen and (max-width: 940px) {
+	/* Preview */
+	.preview__hero {
+		grid-template-columns: 1fr;
+	}
+
+	.preview__img {
+		display: none;
+	}
+
+	/* Benefits */
+	.benefits {
+		gap: 80px;
+	}
+
+	/* Author */
+	.author__hero {
+		grid-template-columns: 1fr;
+		gap: 40px;	
+	}
+
+	.author__img {
+		justify-self: center;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 740px) {
+	/* Header */
+	.header {
+		padding: 40px 0;
+	}
+
+	/* Benefits */
+	.benefits {
+		gap: 40px;
+	}
+
+	/* Typography */
+	.section-title {
+		font-size: 30px;
+		margin: 0 0 40px 0;
+	}
+
+	/* Grid */
+	.section {
+		padding: 30px 0;
+	}
+
+	/* Preview */
+	.preview {
+		padding-top: 0;
+	}
+
+	/* Extra */
+	.extra__container {
+		gap: 30px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	/* Navigation */
+	.navigation__list {
+		gap: 20px;
+	}
+
+	.navigation__link {
+		font-size: 16px;
+	}
+
+	/* Lesson */
+
+	.lesson__container {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 470px) {
+	/* Services */
+	.services__item {
+		flex: 1;
+		width: 85%;
+	}
+
+	.services__header {
+		height: auto;
+	}
+
+	/* Modal */
+	.modal__content {
+		padding: 20px;
+	}
+
+	.modal__close {
+		top: 5px;
+		right: 20px;
+	}
+}
