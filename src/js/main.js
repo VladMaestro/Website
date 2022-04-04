@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const calendarCon = document.querySelector(".calendar__container");
 	const setmoreIframe = `<iframe class="calendar__frame" src="https://easyenprep.setmore.com/vladyslav-shapoval" scrolling="yes" width="100%" height="100%" frameborder="0"></iframe>`;	
-	calendarCon.innerHTML = setmoreIframe;
+	// calendarCon.innerHTML = setmoreIframe;
 
 	const enrollButton = document.querySelectorAll(".enroll");
 	const calendarSection = document.querySelector(".calendar");
@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new Swiper(".slider", {
 		slidesPerView: 3,
 		spaceBetween: 30,
+		preloadImages: false,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev"
