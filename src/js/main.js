@@ -32,10 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	const calendarCon = document.querySelector(".calendar__container");
-	const setmoreIframe = `<iframe class="calendar__frame" src="https://easyenprep.setmore.com/vladyslav-shapoval" scrolling="yes" width="100%" height="100%" frameborder="0"></iframe>`;	
-	// calendarCon.innerHTML = setmoreIframe;
-
+	// Enroll
 	const enrollButton = document.querySelectorAll(".enroll");
 	const calendarSection = document.querySelector(".calendar");
 	
@@ -50,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	for (let i = 0; i < enrollButton.length; i++) {
 		enrollButton[i].addEventListener("click", scrollToCalendar);
 	}
-	
+
+	// Modal
 	const modalDiv = document.querySelector(".modal");
 	const modalContent = document.querySelector(".modal__content");
 	const modalTitle = document.querySelector(".modal__title");
@@ -102,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	modalDiv.addEventListener("click", closeModal);
 	modalClose.addEventListener("click", closeModal);
 	
+	//Slider 
 	new Swiper(".slider", {
 		slidesPerView: 3,
 		spaceBetween: 30,
@@ -124,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				spaceBetween: 30
 			}
 		}
+	});
+
+	// Calendar
+	const calendarCon = document.querySelector(".calendar__container");
+	const setmoreIframe = `<iframe class="calendar__frame" src="https://easyenprep.setmore.com/vladyslav-shapoval" scrolling="yes" width="100%" height="100%" frameborder="0"></iframe>`;	
+	
+	window.addEventListener("load", () => {
+		calendarCon.innerHTML = setmoreIframe;
 	});
 });
 
