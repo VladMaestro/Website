@@ -11,3 +11,10 @@
 	padding: 40px 0;
 	border-top: 1px solid var(--accent-light);
 }
+
+.footer__part {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 50px;
+}

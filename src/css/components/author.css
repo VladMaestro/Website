@@ -29,6 +29,10 @@
 	width: 400px;
 	border-radius: 50%;
 	object-fit: cover;
-	align-self: center;
 	margin-left: 50px;
+}
+
+.author__picture {
+	align-self: center;
+	justify-self: flex-start;
 }

@@ -4,17 +4,16 @@
 
 .preview__hero {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1.3fr 1fr;
 	margin-bottom: 50px;
 }
 
 .preview__info {
-	max-width: 700px;
 	align-self: center;
 }
 
 .preview__title {
-	font-size: 34px;
+	font-size: 30px;
 	line-height: 1.4;
 	margin: 0 0 40px 0;
 }
@@ -23,6 +22,7 @@
 	font-size: 20px;
 	line-height: 1.4;
 	margin: 0 0 10px 0;
+	max-width: 710px;
 }
 
 .preview__text:last-of-type {
@@ -34,6 +34,8 @@
 	width: 400px;
 	border-radius: 50%;
 	object-fit: cover;
+}
+
+.preview__picture {
 	justify-self: center;
-	margin-left: 80px;
 }

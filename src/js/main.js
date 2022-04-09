@@ -1,36 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const servicesData = {
-		trial: {
-			title: "Trial Lesson 🎯",
-			text: "Do you want to learn how I can help you with improving your English?:) Just book a trial class with me and we will discuss your learning opportunities!;)",
-			price: ["$5"]
-		},
-		chat: {
-			title: "Chit-Chat Class 💬",
-			text: "Do you want to practice your Oral English? Just book a lesson and we will speak during our class as much as you want about any topics you like!",
-			price: ["$11 USD / 30 min","$12 USD / 45 min","$14 USD / 60 min","$18 USD / 90 min"]
-		},
-		conversational: {
-			title: "Conversational English 😎",
-			text: "Do you want to speak fluently with foreigners or native speakers? Then this course is right for you! You are going to practice different topics by learning new words, having conversations about them, and completing useful exercises.",
-			price: ["$14 USD / 30 min","$15 USD / 45 min","$16 USD / 60 min","$18 USD / 90 min"]
-		},
-		general: {
-			title: "General English 🇺🇲",
-			text: "Do you want to improve your General English? Grammar, or listening? Or, maybe, reading and pronunciation? Book a lesson with me, and I customize it for you! We will focus on areas that you want to master the most!",
-			price: ["$14 USD / 30 min","$15 USD / 45 min","$16 USD / 60 min","$18 USD / 90 min"]
-		},
-		busines: {
-			title: "Business English/ Interview Preparation 💼",
-			text: "Are you looking for a course to improve your Business English? Or, maybe, you need to prepare for your job or school interview quickly. Perhaps, you want to learn how to write business emails so they would look professional. Or you want to have a good presentation for the next meeting. This course will help you with this! Book a trial lesson and I will tell you what we can do to improve your Business English or prepare you well for your job interview!;)",
-			price: ["$14 USD / 30 min","$15 USD / 45 min","$16 USD / 60 min","$18 USD / 90 min"]
-		},
-		exam: {
-			title: "TOEFL/ Duolingo/ IELTS/ English Exam Preparation 📚",
-			text: "Do you need to prepare quickly for your TOEFL/ Duolingo/ English Exam? Or do you want to improve specific skills for the TOEFL / Duolingo/ English Exam to get a better score? Then I am here for you! Book a trial class and you will learn what we will do together during classes so you will get the maximum score!",
-			price: ["$14 USD / 30 min","$15 USD / 45 min","$16 USD / 60 min","$18 USD / 90 min"]
+	// Storage, Translation
+	const select = document.querySelector("#language");
+	const languageType =  localStorage.getItem("language");
+
+	function changeLanguage(lng) {
+		for (let key in translation) {
+			const arr = document.querySelectorAll(`.lng-${key}`);
+
+			if (arr.length > 1) {
+				for (let i = 0; i < arr.length; i++) {
+					arr[i].innerHTML = translation[key][lng];
+				}
+			} else {
+				arr[0].innerHTML = translation[key][lng];
+			}
 		}
 	}
+
+	if (languageType) {
+		select.value = languageType;
+		if (languageType !== "en") {
+			changeLanguage(languageType);
+		}
+	} else {
+		localStorage.setItem("language", "en");
+		select.value = "en";
+	}
+
+	select.addEventListener("change", (event) => {
+		const value = event.target.value;
+		localStorage.setItem("language", value);
+		changeLanguage(value);
+	});
 
 	// Enroll
 	const enrollButton = document.querySelectorAll(".enroll");
@@ -70,8 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		const target = event.target;
 	
 		if (target.classList.contains("button")) {
+			const languageType =  localStorage.getItem("language");
 			const serviceName = target.dataset.service;
-			const serviceData = servicesData[serviceName];
+			const serviceData = servicesData[serviceName][languageType];
 	
 			modalTitle.textContent = serviceData.title;
 			modalText.textContent = serviceData.text;
@@ -127,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Calendar
 	const calendarCon = document.querySelector(".calendar__container");
-	const setmoreIframe = `<iframe class="calendar__frame" src="https://easyenprep.setmore.com/vladyslav-shapoval" scrolling="yes" width="100%" height="100%" frameborder="0"></iframe>`;	
+	const setmoreIframe = `<iframe class="calendar__frame" src="https://easyenprep.setmore.com/vladyslav-shapoval" loading="lazy" scrolling="yes" width="100%" height="100%" frameborder="0"></iframe>`;	
 	
 	window.addEventListener("load", () => {
 		calendarCon.innerHTML = setmoreIframe;

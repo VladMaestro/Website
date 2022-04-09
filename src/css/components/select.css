@@ -1,0 +1,14 @@
+.select {
+	background-color: transparent;
+	border: 2px solid var(--accent);
+	border-radius: 7px;
+	padding: 6px 10px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 70px;
+	transition: box-shadow .2s ease;
+}
+
+.select:hover {
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
