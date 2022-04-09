@@ -242,7 +242,7 @@ const translation = {
 		ru: "Какие уроки я предлагаю?"
 	},
 	servicesTime: {
-		en: "Duration: 30 - 90 mi",
+		en: "Duration: 30 - 90 min",
 		es: "Duración: 30 - 90 minutos",
 		ua: "Тривалість: 30 - 90 хвилин",
 		ru: "Продолжительность: 30 – 90 минут"
