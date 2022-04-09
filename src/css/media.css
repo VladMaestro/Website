@@ -114,8 +114,11 @@
 		gap: 40px;	
 	}
 
-	.author__img {
+	.author__picture {
 		justify-self: center;
+	}
+
+	.author__img {
 		margin: 0;
 	}
 }
@@ -126,13 +129,25 @@
 		padding: 40px 0;
 	}
 
+	/* Navigation */
+	.navigation__list {
+		gap: 20px;
+	}
+
+	.navigation__link {
+		font-size: 16px;
+	}
+
 	/* Preview */
 	.preview__hero {
 		grid-template-columns: 1fr;
 	}
 
-	.preview__img {
+	.preview__picture {
 		order: -1;
+	}
+
+	.preview__img {
 		margin: 0 0 80px 0;
 	}
 
@@ -164,19 +179,19 @@
 }
 
 @media screen and (max-width: 600px) {
-	/* Navigation */
-	.navigation__list {
+	/* Header */
+	.header, .header__container {
 		gap: 20px;
 	}
 
-	.navigation__link {
-		font-size: 16px;
-	}
-
 	/* Lesson */
-
 	.lesson__container {
 		width: 100%;
+	}
+
+	/* Footer */
+	.footer__container, .footer__part {
+		gap: 20px;
 	}
 }
 

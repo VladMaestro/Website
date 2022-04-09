@@ -1,4 +1,12 @@
+.contacts {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 24px;
+}
+
 .contacts__email {
+	display: inline-block;
 	color: var(--main-text);
 	text-decoration: none;
 }

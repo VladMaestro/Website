@@ -5,6 +5,13 @@
 		<meta name="author" content="Vlad Shapoval" />
 		<meta name="description" content="Are you looking for a way to improve your English? Vlad Shapoval is an experienced and TESOL Certified teacher who can help you to master your English!" />
 		<meta name="google-site-verification" content="3dBZxnSzCwAEzu_hdAjpSL1isvd8M0fXqVeL4T4PPXk" />
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.easyenprep.com/">
+		<meta property="og:title" content="Learn to speak English fluently online">
+		<meta property="og:description" content="Are you looking for a way to improve your English? Vlad Shapoval is an experienced and TESOL Certified teacher who can help you to master your English!">
+		<meta property="og:image" content="https://www.easyenprep.com/img/author/vlad1.webp" />
+		<meta name="twitter:card" content="summary_large_image"></meta>
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +30,7 @@
 			<div class="modal__content">
 				<h3 class="modal__title"></h3>
 				<p class="modal__text"></p>
-				<h4 class="modal__text">Price:</h4>
+				<h4 class="modal__text lng-linkModal">Price:</h4>
 				<ul class="modal__list">
 				</ul>
 				<span class="modal__close">&#10540;</span>
@@ -33,48 +40,60 @@
 		<section class="preview section">
 			<div class="container">
 				<header class="header">
-					<nav class="navigation">
-						<ul class="navigation__list">
-							<li class="navigation__item">
-								<a href="#about" class="navigation__link">About Me</a>
-							</li>
-							<li class="navigation__item">
-								<a href="#services" class="navigation__link">Services</a>
-							</li>
-							<li class="navigation__item">
-								<a href="#reviews" class="navigation__link">Reviews</a>
-							</li>
-							<li class="navigation__item">
-								<a href="#calendar" class="navigation__link">Calendar</a>
-							</li>
-						</ul>
-					</nav>
+					<div class="header__container">
+						<img src="./img/logo/easyen.png" height="50px" width="auto" class="header__logo" alt="easyen">
+						<nav class="navigation">
+							<ul class="navigation__list">
+								<li class="navigation__item">
+									<a href="#about" class="navigation__link lng-linkAbout">About Me</a>
+								</li>
+								<li class="navigation__item">
+									<a href="#services" class="navigation__link lng-linkServices">Services</a>
+								</li>
+								<li class="navigation__item">
+									<a href="#reviews" class="navigation__link lng-linkReviews">Reviews</a>
+								</li>
+								<li class="navigation__item">
+									<a href="#calendar" class="navigation__link lng-linkCalendar">Calendar</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
 					<div class="contacts">
-						<a href="mailto:vlad.shapoval.teacher@gmail.com" target="_blank" class="contacts__email button button--light">Send email</a>
+						<select name="language" id="language" class="select">
+							<option value="en">EN</option>
+							<option value="es">ES</option>
+							<option value="ua">UA</option>
+							<option value="ru">RU</option>
+						</select>
+						<a href="mailto:vlad.shapoval.teacher@gmail.com" target="_blank" class="contacts__email button button--light lng-emailBtn">Send email</a>
 					</div>
 				</header>
 				<div class="preview__hero">
 					<div class="preview__info">
-						<h1 class="preview__title">Learn to speak English fluently online</h1>
-						<p class="preview__text">Trial lesson 30 minutes.</p>
-						<p class="preview__text">
+						<h1 class="preview__title lng-previewTitle">Learn to speak English fluently online</h1>
+						<p class="preview__text lng-previewText1">Trial lesson 25 minutes.</p>
+						<p class="preview__text lng-previewText2">
 							I know that learning another language can be frustrating and hard. Therefore, I am using all possible ways and strategies to help my students with learning the language and keep their motivation up. 👊</p>
-						<button class="button enroll preview__button">Enroll</button>
+						<button class="button enroll preview__button lng-previewBtn">Enroll</button>
 					</div>
-					<img src="./img/author/vlad1.webp" alt="Vlad" class="preview__img">
+					<picture class="preview__picture">
+						<source type="image/webp" srcset="./img/author/vlad1.webp">
+						<img class="preview__img" src="./img/author/vlad1.jpg" alt="Vlad - English Teacher">
+					</picture>
 				</div>
 				<div class="benefits">
 					<div class="benefit">
 						<span class="benefit__emoji">✅</span>
-						<p class="benefit__text"> <span class="accent">Experienced Teacher</span>  <br> TOEFL Duolingo and TEFL/TESOL</p>
+						<p class="benefit__text lng-benefit1"> <span class="accent">Experienced Teacher</span> <br> TOEFL Duolingo and TEFL/TESOL</p>
 					</div>
 					<div class="benefit">
 						<span class="benefit__emoji">🔊</span>
-						<p class="benefit__text"> <span class="accent">All classes</span> are in English <br> with free materials</p>
+						<p class="benefit__text lng-benefit2"> <span class="accent">All classes</span> are in English <br> with free materials</p>
 					</div>
 					<div class="benefit">
 						<span class="benefit__emoji">💰</span>
-						<p class="benefit__text"> <span class="accent">From 11 usd</span> <br> for 1 hour lesson </p>
+						<p class="benefit__text lng-benefit3"> <span class="accent">From 11€ euros</span> <br> for 1 hour lesson</p>
 					</div>
 				</div>
 			</div>
@@ -82,19 +101,22 @@
 
 		<section class="lesson section">
 			<div class="container">
-				<h2 class="section-title">How the class is organized</h2>
+				<h2 class="section-title lng-lessonTitle">How the class is organized</h2>
 				<div class="lesson__container">
 					<div class="lesson__wrap">
-						<img src="./img/lesson/lesson.webp" alt="Online lesson" class="lesson__img">
+						<picture class="preview__picture">
+							<source type="image/webp" srcset="./img/lesson/lesson.webp">
+							<img src="./img/lesson/lesson.jpg" alt="Online lesson" class="lesson__img">
+						</picture>
 					</div>
 					<div class="lesson__info">
-						<p class="lesson__text">During my lessons, I will be giving you as much time as I can for you to speak because I believe it is an important part of learning any language.</p>
+						<p class="lesson__text lng-lessonText">During my lessons, I will be giving you as much time as I can for you to speak because I believe it is an important part of learning any language.</p>
 						<ul class="lesson__list">
-							<li class="lesson__item">See notable improvement of your speaking, vocabulary, and grammar</li>
-							<li class="lesson__item">You will feel more confident and relaxed when speaking English</li>
-							<li class="lesson__item">You will get corrections and suggestions on vocabulary and sentence structures</li>
-							<li class="lesson__item">You will have a clear understanding of what you need to focus on</li>
-							<li class="lesson__item">Finally, you will achieve your learning goals!</li>
+							<li class="lesson__item lng-lessonItem1">See notable improvement of your speaking, vocabulary, and grammar</li>
+							<li class="lesson__item lng-lessonItem2">You will feel more confident and relaxed when speaking English</li>
+							<li class="lesson__item lng-lessonItem3">You will get corrections and suggestions on vocabulary and sentence structures</li>
+							<li class="lesson__item lng-lessonItem4">You will have a clear understanding of what you need to focus on</li>
+							<li class="lesson__item lng-lessonItem5">Finally, you will achieve your learning goals!</li>
 						</ul>
 					</div>
 				</div>
@@ -103,36 +125,36 @@
 
 		<section class="extra section">
 			<div class="container">
-				<h2 class="section-title">I focus on what's really important</h2>
+				<h2 class="section-title lng-extraTitle0">I focus on what's really important</h2>
 				<div class="extra__container">
 					<div class="extra__item">
-						<h3 class="extra__title">Lots of practice</h3>
-						<p class="extra__text">All classes are held in English only, starting from the very beginning</p>
+						<h3 class="extra__title lng-extraTitle1">Lots of practice</h3>
+						<p class="extra__text lng-extraText1">All classes are held in English only, starting from the very beginning</p>
 						<span class="extra__emoji">🤟</span>
 					</div>
 					<div class="extra__item">
-						<h3 class="extra__title">Without cramming</h3>
-						<p class="extra__text">And extra water, which distracts from the study. You will learn to understand the language</p>
+						<h3 class="extra__title lng-extraTitle2">Without cramming</h3>
+						<p class="extra__text lng-extraText2">And extra water, which distracts from the study. You will learn to understand the language</p>
 						<span class="extra__emoji">💣</span>
 					</div>
 					<div class="extra__item">
-						<h3 class="extra__title">Friendly atmosphere</h3>
-						<p class="extra__text">We can discuss whatever you want. Any topic of your choice</p>
+						<h3 class="extra__title lng-extraTitle3">Friendly atmosphere</h3>
+						<p class="extra__text lng-extraText3">We can discuss whatever you want. Any topic of your choice</p>
 						<span class="extra__emoji">🤗</span>
 					</div>
 					<div class="extra__item">
-						<h3 class="extra__title">Knowledge control</h3>
-						<p class="extra__text">If you do not understand something, Vlad will provide you with all possible ways to do so!</p>
+						<h3 class="extra__title lng-extraTitle4">Knowledge control</h3>
+						<p class="extra__text lng-extraText4">If you do not understand something, Vlad will provide you with all possible ways to do so!</p>
 						<span class="extra__emoji">🎓</span>
 					</div>
 					<div class="extra__item">
-						<h3 class="extra__title">Support 24/7</h3>
-						<p class="extra__text">Any problems? You can text me anytime and we can find the best solution!</p>
+						<h3 class="extra__title lng-extraTitle5">Support 24/7</h3>
+						<p class="extra__text lng-extraText5">Any problems? You can text me anytime and we can find the best solution!</p>
 						<span class="extra__emoji">🔥</span>
 					</div>
 					<div class="extra__item">
-						<h3 class="extra__title">Free cancellation</h3>
-						<p class="extra__text">It is absolutely free just 4 hours before our scheduled lesson! Just tell me beforehand!</p>
+						<h3 class="extra__title lng-extraTitle6">Free cancellation</h3>
+						<p class="extra__text lng-extraText6">It is absolutely free just 4 hours before our scheduled lesson! Just tell me beforehand!</p>
 						<span class="extra__emoji">💸</span>
 					</div>
 				</div>
@@ -142,13 +164,16 @@
 		<section class="author section" id="about">
 			<div class="container">
 				<div  class="author__hero">
-					<img src="./img/author/vlad2.webp" alt="Vlad" class="author__img">
+					<picture class="author__picture">
+						<source type="image/webp" srcset="./img/author/vlad2.webp">
+						<img src="./img/author/vlad2.jpg" alt="Vlad - English Teacher" class="author__img">
+					</picture>
 					<div class="author__info">
-						<h3 class="author__title">Let's meet! 🤝</h3>
-						<p class="author__text">My name is Vlad, and I am an experienced and <span class="accent">TESOL Certified</span> English Teacher. I always had a passion for English. That was the reason why I have decided to become a professional English teacher.</p>
-						<p class="author__text">I graduated from the <span class="accent">University of Arizona</span> where I received my Teaching English as a Foreign Language Certificate and I took some English Proficiency Exams like <span class="accent">TOEFL and Duolingo</span> to prove my knowledge of the language.</p>
-						<p class="author__text">I have already been <span class="accent">teaching and helping</span> students for a few years. And I am still carrying this teaching passion in me and I am trying to make my students <span class="accent">fall in love with English</span> every lesson.</p>
-						<button class="button enroll button--full">Enroll</button>
+						<h3 class="author__title lng-authorTitle">Let's meet! 🤝</h3>
+						<p class="author__text lng-authorText1">My name is Vlad, and I am an experienced and <span class="accent">TESOL Certified</span> English Teacher. I always had a passion for English. That was the reason why I have decided to become a professional English teacher.</p>
+						<p class="author__text lng-authorText2">I graduated from the <span class="accent">University of Arizona</span> where I received my Teaching English as a Foreign Language Certificate and I took some English Proficiency Exams like <span class="accent">TOEFL and Duolingo</span> to prove my knowledge of the language.</p>
+						<p class="author__text lng-authorText3">I have already been <span class="accent">teaching and helping</span> students for a few years. And I am still carrying this teaching passion in me and I am trying to make my students <span class="accent">fall in love with English</span> every lesson.</p>
+						<button class="button enroll button--full lng-authorBtn">Enroll</button>
 					</div>
 				</div>
 			</div>
@@ -156,114 +181,114 @@
 
 		<section class="services section" id="services">
 			<div class="container">
-				<h2 class="section-title">What services do I offer?</h2>
+				<h2 class="section-title lng-servicesTitle">What services do I offer?</h2>
 				<div  class="services__container">
 					<div class="services__item">
 						<div class="services__header">
-							<h3 class="services__title">Trial Lesson 🎯</h3>
-							<p class="services__time">Duration: 30 min</p>
-							<p class="services__lessons">2 - 3 lessons per week</p>
+							<h3 class="services__title lng-trialTitle">Trial Lesson 🎯</h3>
+							<p class="services__time lng-trialTime">Duration: 25 min</p>
+							<p class="services__lessons lng-servicesLessons">2 - 3 lessons per week</p>
 						</div>
 						<div class="services__info">
 							<ul class="services__list">
-								<li class="services__point">Evaluation of your level</li>
-								<li class="services__point">Finding your weaknesses</li>
-								<li class="services__point">Suggested learning plan</li>
-								<li class="services__point">Recommendations on self-study resources</li>
-								<li class="services__point">A first taste of a lesson</li>
+								<li class="services__point lng-trialItem1">Evaluation of your level</li>
+								<li class="services__point lng-trialItem2">Finding your weaknesses</li>
+								<li class="services__point lng-trialItem3">Suggested learning plan</li>
+								<li class="services__point lng-trialItem4">Recommendations on self-study resources</li>
+								<li class="services__point lng-trialItem5">A first taste of a lesson</li>
 							</ul>
-							<p class="services__price accent">Price: $5</p>
-							<button class="button button--full" data-service="trial">More info</button>
+							<p class="services__price accent lng-trialPrice">Price: 5€</p>
+							<button class="button button--full lng-servicesBtn" data-service="trial">More info</button>
 						</div>
 					</div>
 					<div class="services__item">
 						<div class="services__header">
-							<h3 class="services__title">Chit-Chat Class 💬</h3>
-							<p class="services__time">Duration: 30 - 90 min</p>
-							<p class="services__lessons">2 - 3 lessons per week</p>
+							<h3 class="services__title lng-chatTitle">Chit-Chat Class 💬</h3>
+							<p class="services__time lng-servicesTime">Duration: 30 - 90 min</p>
+							<p class="services__lessons lng-servicesLessons">2 - 3 lessons per week</p>
 						</div>
 						<div class="services__info">
 							<ul class="services__list">
-								<li class="services__point">Regular practice</li>
-								<li class="services__point">Any topic you like</li>
-								<li class="services__point">Easy-going conversation</li>
-								<li class="services__point">Friendly atmosphere</li>
-								<li class="services__point">Analyze of mistakes</li>
+								<li class="services__point lng-chatItem1">Regular practice</li>
+								<li class="services__point lng-chatItem2">Any topic you like</li>
+								<li class="services__point lng-chatItem3">Easy-going conversation</li>
+								<li class="services__point lng-chatItem4">Friendly atmosphere</li>
+								<li class="services__point lng-chatItem5">Analyze of mistakes</li>
 							</ul>
-							<p class="services__price accent">Price: from $11</p>
-							<button class="button button--full" data-service="chat">More info</button>
+							<p class="services__price accent lng-chatPrice">Price: from 11€</p>
+							<button class="button button--full lng-servicesBtn" data-service="chat">More info</button>
 						</div>
 					</div>
 					<div class="services__item">
 						<div class="services__header">
-							<h3 class="services__title">Conversational English 😎</h3>
-							<p class="services__time">Duration: 30 - 90 min</p>
-							<p class="services__lessons">2 - 3 lessons per week</p>
+							<h3 class="services__title lng-convTitle">Conversational English 😎</h3>
+							<p class="services__time lng-servicesTime">Duration: 30 - 90 min</p>
+							<p class="services__lessons lng-servicesLessons">2 - 3 lessons per week</p>
 						</div>
 						<div class="services__info">
 							<ul class="services__list">
-								<li class="services__point">Boost confidence in speaking</li>
-								<li class="services__point">100+ different topics</li>
-								<li class="services__point">Learning new words</li>
-								<li class="services__point">Lots of speaking practice!</li>
-								<li class="services__point">Noticed progress after several lessons!</li>
+								<li class="services__point lng-convItem1">Boost confidence in speaking</li>
+								<li class="services__point lng-convItem2">100+ different topics</li>
+								<li class="services__point lng-convItem3">Learning new words</li>
+								<li class="services__point lng-convItem4">Lots of speaking practice!</li>
+								<li class="services__point lng-convItem5">Noticed progress after several lessons!</li>
 							</ul>
-							<p class="services__price accent">Price: from $14</p>
-							<button class="button button--full" data-service="conversational">More info</button>
+							<p class="services__price accent lng-servicesPrice">Price: from 14€</p>
+							<button class="button button--full lng-servicesBtn" data-service="conversational">More info</button>
 						</div>
 					</div>
 					<div class="services__item">
 						<div class="services__header">
-							<h3 class="services__title">General English 🇺🇲</h3>
-							<p class="services__time">Duration: 30 - 90 min</p>
-							<p class="services__lessons">2 - 3 lessons per week</p>
+							<h3 class="services__title lng-genTitle">General English 🇺🇲</h3>
+							<p class="services__time lng-servicesTime">Duration: 30 - 90 min</p>
+							<p class="services__lessons lng-servicesLessons">2 - 3 lessons per week</p>
 						</div>
 						<div class="services__info">
 							<ul class="services__list">
-								<li class="services__point">Your chosen skills for improvement</li>
-								<li class="services__point">Comprehensive lessons</li>
-								<li class="services__point">Immediate correction of mistakes</li>
-								<li class="services__point">Lots of practice</li>
-								<li class="services__point">Free access to different resources</li>
+								<li class="services__point lng-genItem1">Your chosen skills for improvement</li>
+								<li class="services__point lng-genItem2">Comprehensive lessons</li>
+								<li class="services__point lng-genItem3">Immediate correction of mistakes</li>
+								<li class="services__point lng-genItem4">Lots of practice</li>
+								<li class="services__point lng-genItem5">Free access to different resources</li>
 							</ul>
-							<p class="services__price accent">Price: from $14</p>
-							<button class="button button--full" data-service="general">More info</button>
+							<p class="services__price accent lng-servicesPrice">Price: from 14€</p>
+							<button class="button button--full lng-servicesBtn" data-service="general">More info</button>
 						</div>
 					</div>
 					<div class="services__item">
 						<div class="services__header">
-							<h3 class="services__title">Business English/ Interview Preparation 💼</h3>
-							<p class="services__time">Duration: 30 - 90 min</p>
-							<p class="services__lessons">2 - 3 lessons per week</p>
+							<h3 class="services__title lng-busTitle">Business English/ Interview Preparation 💼</h3>
+							<p class="services__time lng-servicesTime">Duration: 30 - 90 min</p>
+							<p class="services__lessons lng-servicesLessons">2 - 3 lessons per week</p>
 						</div>
 						<div class="services__info">
 							<ul class="services__list">
-								<li class="services__point">Writing emails</li>
-								<li class="services__point">Delivering presentations</li>
-								<li class="services__point">Making Calls</li>
-								<li class="services__point">Interviews, Meetings</li>
-								<li class="services__point">Negotiations </li>
+								<li class="services__point lng-busItem1">Writing emails</li>
+								<li class="services__point lng-busItem2">Delivering presentations</li>
+								<li class="services__point lng-busItem3">Making Calls</li>
+								<li class="services__point lng-busItem4">Interviews, Meetings</li>
+								<li class="services__point lng-busItem5">Negotiations</li>
 							</ul>
-							<p class="services__price accent">Price: from $14</p>
-							<button class="button button--full" data-service="busines">More info</button>
+							<p class="services__price accent lng-servicesPrice">Price: from 14€</p>
+							<button class="button button--full lng-servicesBtn" data-service="busines">More info</button>
 						</div>
 					</div>
 					<div class="services__item">
 						<div class="services__header">
-							<h3 class="services__title">TOEFL/ Duolingo/ IELTS/ English Exam Preparation 📚</h3>
-							<p class="services__time">Duration: 30 - 90 min</p>
-							<p class="services__lessons">2 - 3 lessons per week</p>
+							<h3 class="services__title lng-examTitle">TOEFL/ Duolingo/ IELTS/ English Exam Preparation 📚</h3>
+							<p class="services__time lng-servicesTime">Duration: 30 - 90 min</p>
+							<p class="services__lessons lng-servicesLessons">2 - 3 lessons per week</p>
 						</div>
 						<div class="services__info">
 							<ul class="services__list">
-								<li class="services__point">New 20 TOEFL Words Each Lesson</li>
-								<li class="services__point">Free Preparation Books</li>
-								<li class="services__point">Writing Topics and Instant Feedback</li>
-								<li class="services__point">Speaking Opportunities</li>
-								<li class="services__point">Listening Comprehension</li>
+								<li class="services__point lng-examItem1">New 20 TOEFL Words Each Lesson</li>
+								<li class="services__point lng-examItem2">Free Preparation Books</li>
+								<li class="services__point lng-examItem3">Writing Topics and Instant Feedback</li>
+								<li class="services__point lng-examItem4">Speaking Opportunities</li>
+								<li class="services__point lng-examItem5">Listening Comprehension</li>
 							</ul>
-							<p class="services__price accent">Price: from $14</p>
-							<button class="button button--full" data-service="exam">More info</button>
+							<p class="services__price accent lng-servicesPrice">Price: from 14€</p>
+							<button class="button button--full lng-servicesBtn" data-service="exam">More info</button>
 						</div>
 					</div>
 				</div>
@@ -272,13 +297,16 @@
 
 		<section class="reviews section" id="reviews">
 			<div class="container">
-				<h2 class="section-title">What my students say</h2>
+				<h2 class="section-title lng-reviewTitle">What my students say</h2>
 				<div class="reviews__container">
 					<div class="slider swiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/4.webp" alt="Photo of Oleg" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/4.webp">
+										<img src="./img/reviews/4.jpg" alt="Photo of Oleg" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Oleg</h3>
 										<p class="slider__lessons">Lessons: 14</p>
@@ -294,7 +322,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/5.webp" alt="Photo of Haruka Makino" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/5.webp">
+										<img src="./img/reviews/5.jpg" alt="Photo of Haruka Makino" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Haruka Makino</h3>
 										<p class="slider__lessons">Lessons: 17</p>
@@ -310,7 +341,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/7.webp" alt="Photo of Анна" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/7.webp">
+										<img src="./img/reviews/7.jpg" alt="Photo of Анна" class="slider__author">
+									</picture>						
 									<div class="slider__con">
 										<h3 class="slider__name">Анна</h3>
 										<p class="slider__lessons">Lessons: 23</p>
@@ -326,7 +360,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/8.webp" alt="Photo of Борис" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/8.webp">
+										<img src="./img/reviews/8.jpg" alt="Photo of Борис" class="slider__author">
+									</picture>	
 									<div class="slider__con">
 										<h3 class="slider__name">Борис</h3>
 										<p class="slider__lessons">Lessons: 18</p>
@@ -342,7 +379,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/6.webp" alt="Photo of Артём" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/6.webp">
+										<img src="./img/reviews/6.jpg" alt="Photo of Артём" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Артём</h3>
 										<p class="slider__lessons">Lessons: 26</p>
@@ -358,7 +398,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/9.webp" alt="Photo of Alla" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/9.webp">
+										<img src="./img/reviews/9.jpg" alt="Photo of Alla" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Alla</h3>
 										<p class="slider__lessons">Lessons: 15</p>
@@ -374,7 +417,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/10.webp" alt="Photo of Tu" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/10.webp">
+										<img src="./img/reviews/10.jpg" alt="Photo of Tu" class="slider__author">
+									</picture>						
 									<div class="slider__con">
 										<h3 class="slider__name">Tu</h3>
 										<p class="slider__lessons">Lessons: 10</p>
@@ -390,7 +436,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/11.webp" alt="Photo of Adam Goszka" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/11.webp">
+										<img src="./img/reviews/11.jpg" alt="Photo of Adam Goszka" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Adam Goszka</h3>
 										<p class="slider__lessons">Lessons: 19</p>
@@ -406,7 +455,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/2.webp" alt="Photo of Daria" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/2.webp">
+										<img src="./img/reviews/2.jpg" alt="Photo of Daria" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Daria</h3>
 										<p class="slider__lessons">Lessons: 11</p>
@@ -422,7 +474,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/3.webp" alt="Photo of Stephanie Cheah" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/3.webp">
+										<img src="./img/reviews/3.jpg" alt="Photo of Stephanie Cheah" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Stephanie Cheah</h3>
 										<p class="slider__lessons">Lessons: 31</p>
@@ -438,7 +493,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/12.webp" alt="Photo of Christine Wang" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/12.webp">
+										<img src="./img/reviews/12.jpg" alt="Photo of Christine Wang" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Christine Wang</h3>
 										<p class="slider__lessons">Lessons: 20</p>
@@ -454,7 +512,10 @@
 							</div>
 							<div class="swiper-slide slider__item">
 								<header class="slider__header">
-									<img src="./img/reviews/1.webp" alt="Photo of Anatolii" class="slider__author">
+									<picture class="preview__picture">
+										<source type="image/webp" srcset="./img/reviews/1.webp">
+										<img src="./img/reviews/1.jpg" alt="Photo of Anatolii" class="slider__author">
+									</picture>
 									<div class="slider__con">
 										<h3 class="slider__name">Anatoliio</h3>
 										<p class="slider__lessons">Lessons: 11</p>
@@ -478,7 +539,7 @@
 
 		<section class="section calendar" id="calendar">
 			<div class="container">
-				<h2 class="section-title">My Calendar</h2>
+				<h2 class="section-title lng-calendarTitle">My Calendar</h2>
 				<div class="calendar__container"></div>
 			</div>
 		</section>
@@ -486,30 +547,34 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="footer__container">
-					<nav class="navigation">
-						<ul class="navigation__list">
-							<li class="navigation__item">
-								<a href="#about" class="navigation__link">About Me</a>
-							</li>
-							<li class="navigation__item">
-								<a href="#services" class="navigation__link">Services</a>
-							</li>
-							<li class="navigation__item">
-								<a href="#reviews" class="navigation__link">Reviews</a>
-							</li>
-							<li class="navigation__item">
-								<a href="#calendar" class="navigation__link">Calendar</a>
-							</li>
-						</ul>
-					</nav>
+					<div class="footer__part">
+						<img src="./img/logo/easyen.png" height="40px" width="auto" class="header__logo" alt="easyen">
+						<nav class="navigation">
+							<ul class="navigation__list">
+								<li class="navigation__item">
+									<a href="#about" class="navigation__link lng-linkAbout">About Me</a>
+								</li>
+								<li class="navigation__item">
+									<a href="#services" class="navigation__link lng-linkServices">Services</a>
+								</li>
+								<li class="navigation__item">
+									<a href="#reviews" class="navigation__link lng-linkReviews">Reviews</a>
+								</li>
+								<li class="navigation__item">
+									<a href="#calendar" class="navigation__link lng-linkCalendar">Calendar</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
 					<div class="contacts">
-						<a href="mailto:vlad.shapoval.teacher@gmail.com" target="_blank" class="contacts__email button button--light">Send email</a>
+						<a href="mailto:vlad.shapoval.teacher@gmail.com" target="_blank" class="contacts__email button button--light lng-emailBtn">Send email</a>
 					</div>
 				</div>
 			</div>
 		</footer>
 
 		<script src="./js/swiper-bundle.min.js"></script>
+		<script src="./js/translation.js"></script>
 		<script src="./js/main.js"></script>
 	</body>
 </html>
