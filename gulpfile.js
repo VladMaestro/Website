@@ -15,7 +15,7 @@ const del = require('del');
 
 const html = () => {
 	return gulp
-		.src('src/*.html')
+		.src('src/*.{html,txt,xml}')
 		.pipe(
 			htmlmin({
 				removeComments: true,

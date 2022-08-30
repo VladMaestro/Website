@@ -216,3 +216,9 @@
 		right: 20px;
 	}
 }
+
+@media screen and (max-width: 420px) {
+	.slider__text {
+		max-height: 170px;
+	}
+}
