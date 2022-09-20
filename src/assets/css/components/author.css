@@ -1,0 +1,79 @@
+.author__hero {
+	display: grid;
+	grid-template-columns: 1fr 1.3fr;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.author__info {
+	align-self: center;
+}
+
+.author__title {
+	font-size: 34px;
+	font-family: "Patrick Hand", sans-serif;
+	line-height: 1.4;
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+
+.author__text {
+	text-align: justify;
+	font-size: 20px;
+	line-height: 1.4;
+	margin: 0 0 20px 0;
+}
+
+.author__picture {
+	position: relative;
+	align-self: center;
+	justify-self: flex-start;
+	height: 400px;
+	width: 400px;
+	margin-left: 50px;
+}
+
+.author__img {
+	border-radius: 50%;
+}
+
+@media screen and (max-width: 1260px) {
+	.author__hero {
+		grid-template-columns: 1fr 1.5fr;
+	}
+
+	.author__title {
+		font-size: 30px;
+	}
+
+	.author__text {
+		font-size: 16px;
+	}
+
+	.author__picture {
+		width: 300px;
+		height: 300px;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.author__picture {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@media screen and (max-width: 940px) {
+	.author__hero {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.author__picture {
+		justify-self: center;
+	}
+
+	.author__picture {
+		margin: 0;
+	}
+}

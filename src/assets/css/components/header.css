@@ -1,0 +1,32 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 40px;
+	padding: 40px 0 80px 0;
+}
+
+.header__container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 50px;
+}
+
+.header__logo {
+	padding-top: 2px;
+}
+
+@media screen and (max-width: 740px) {
+	.header {
+		padding: 40px 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header,
+	.header__container {
+		gap: 20px;
+	}
+}
