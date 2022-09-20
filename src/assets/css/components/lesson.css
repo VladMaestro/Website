@@ -1,0 +1,62 @@
+.lesson__container {
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.lesson__wrap {
+	position: relative;
+	flex: 0 0 50%;
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	height: auto;
+}
+
+.lesson__img {
+	border-radius: 22px;
+}
+
+.lesson__text {
+	font-size: 24px;
+	line-height: 1.4;
+	margin: 0 0 40px 0;
+}
+
+.lesson__list {
+	list-style-type: decimal;
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+.lesson__item {
+	font-size: 20px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1300px) {
+	.lesson__text {
+		font-size: 20px;
+	}
+
+	.lesson__item {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.lesson__container {
+		flex-direction: column;
+	}
+
+	.lesson__container {
+		width: 70%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.lesson__container {
+		width: 100%;
+	}
+}
