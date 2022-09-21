@@ -26,3 +26,13 @@
 @import "./calendar.css";
 
 @import "./footer.css";
+
+@import "./blog/blogTypography.css";
+@import "./blog/tags.css";
+@import "./blog/lastArticles.css";
+@import "./blog/recommended.css";
+@import "./blog/bigArticle.css";
+@import "./blog/mediumllArticle.css";
+@import "./blog/smallArticle.css";
+@import "./blog/toefl.css";
+@import "./blog/allSections.css";

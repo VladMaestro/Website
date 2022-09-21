@@ -1,0 +1,26 @@
+.recommended__container {
+	display: grid;
+	gap: 25px;
+}
+
+@media screen and (min-width: 768px) {
+	.recommended__container {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.recommended__title {
+		grid-column: span 2;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.recommended__container {
+		grid-template-columns: 1fr;
+		position: sticky;
+		top: 5px;
+	}
+
+	.recommended__title {
+		grid-column: 1;
+	}
+}

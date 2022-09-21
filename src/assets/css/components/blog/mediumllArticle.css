@@ -1,0 +1,17 @@
+.mediumllArticle {
+	display: grid;
+	gap: 10px;
+}
+
+.mediumllArticle__picture {
+	position: relative;
+	aspect-ratio: 16 / 9;
+}
+
+.mediumllArticle__img {
+	border-radius: 10px;
+}
+
+.mediumllArticle__time {
+	display: block;
+}

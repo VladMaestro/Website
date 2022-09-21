@@ -1,0 +1,34 @@
+.lastArticles {
+	margin-bottom: 40px;
+}
+
+.lastArticles__container {
+	display: grid;
+	gap: 40px;
+}
+
+.lastArticles__left {
+	display: grid;
+	gap: 30px;
+}
+
+@media screen and (min-width: 768px) {
+	.lastArticles__left {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr auto;
+		row-gap: 60px;
+		column-gap: 20px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.lastArticles__left {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.lastArticles__container {
+		grid-template-columns: 1fr 250px;
+	}
+}
