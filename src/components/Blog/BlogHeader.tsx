@@ -11,6 +11,11 @@ export const BlogHeader: React.FC = () => {
 					<nav className="navigation">
 						<ul className="navigation__list">
 							<li className="navigation__item">
+								<Link href="/">
+									<a className="navigation__link">Home</a>
+								</Link>
+							</li>
+							<li className="navigation__item">
 								<Link href="/blog">
 									<a className="navigation__link">Blog</a>
 								</Link>

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const BlogFooter: React.FC = () => {
 	return (
@@ -11,9 +12,14 @@ export const BlogFooter: React.FC = () => {
 						<nav className="navigation">
 							<ul className="navigation__list">
 								<li className="navigation__item">
-									<a href="#" className="navigation__link">
-										Blog
-									</a>
+									<Link href="/">
+										<a className="navigation__link">Home</a>
+									</Link>
+								</li>
+								<li className="navigation__item">
+									<Link href="/blog">
+										<a className="navigation__link">Blog</a>
+									</Link>
 								</li>
 							</ul>
 						</nav>

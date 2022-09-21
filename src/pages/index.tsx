@@ -9,6 +9,7 @@ import { Modal } from "../components";
 
 import { servicesData, translation } from "../utils/translation";
 import { serviceDataType } from "../@types/servicesData";
+import Link from "next/link";
 
 const swiperOptions = {
 	spaceBetween: 30,
@@ -135,6 +136,11 @@ const Home: NextPage = () => {
 										<a href="#calendar" className="navigation__link lng-linkCalendar">
 											{translation["linkCalendar"][languageSelect]}
 										</a>
+									</li>
+									<li className="navigation__item">
+										<Link href="/blog">
+											<a className="navigation__link">Blog</a>
+										</Link>
 									</li>
 								</ul>
 							</nav>
@@ -911,6 +917,11 @@ const Home: NextPage = () => {
 										<a href="#calendar" className="navigation__link lng-linkCalendar">
 											{translation["linkCalendar"][languageSelect]}
 										</a>
+									</li>
+									<li className="navigation__item">
+										<Link href="/blog">
+											<a className="navigation__link">Blog</a>
+										</Link>
 									</li>
 								</ul>
 							</nav>
