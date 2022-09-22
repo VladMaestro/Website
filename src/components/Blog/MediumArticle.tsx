@@ -19,7 +19,7 @@ export const MediumArticle: React.FC = () => {
 			</time>
 
 			<h3 className="h3">
-				<Link href="#">
+				<Link href="/blog/article/test">
 					<a className="link">Freeland makes a modern supply-side bet on Canada`s future economic growth</a>
 				</Link>
 			</h3>
