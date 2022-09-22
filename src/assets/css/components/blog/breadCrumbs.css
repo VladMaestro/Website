@@ -1,0 +1,30 @@
+.breadCrumbs {
+	display: flex;
+	gap: 5px;
+	margin: 0 0 30px 0;
+}
+
+.breadCrumbs__item {
+	margin: 0;
+}
+
+.breadCrumbs__link {
+	font-size: 18px;
+	line-height: 20px;
+	position: relative;
+	color: var(--secondary-text);
+	margin-right: 5px;
+}
+
+.breadCrumbs__slash {
+	display: inline-block;
+	color: var(--accent);
+}
+
+.breadCrumbs__item:last-child {
+	margin-right: 0;
+}
+
+.breadCrumbs__item:last-of-type > .breadCrumbs__slash {
+	display: none;
+}

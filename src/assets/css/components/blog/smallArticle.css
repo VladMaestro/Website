@@ -14,3 +14,12 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
+
+.smallArticle__text {
+	display: none;
+	margin: 0;
+}
+
+.smallArticle__text--visible {
+	display: block;
+}
