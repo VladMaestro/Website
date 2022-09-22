@@ -3,13 +3,16 @@ import Link from "next/link";
 
 export const Tags: React.FC = () => {
 	return (
-		<section className="tags">
+		<section className="tags" aria-labelledby="tagsSectionTitle">
 			<div className="container">
+				<h2 className="sr-only" id="tagsSectionTitle">
+					All Tags
+				</h2>
 				<div className="tags__container">
-					<Link href="#">
+					<Link href="/blog/grammer">
 						<a className="tags__link">Grammar</a>
 					</Link>
-					<Link href="#">
+					<Link href="/blog/toefl">
 						<a className="tags__link">TOEFL</a>
 					</Link>
 					<Link href="#">

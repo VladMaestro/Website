@@ -6,19 +6,19 @@ import { MediumArticle } from "./MediumArticle";
 
 export const LastArticles: React.FC = () => {
 	return (
-		<section className="lastArticles">
+		<div className="lastArticles">
 			<div className="container">
 				<div className="lastArticles__container">
-					<div className="lastArticles__left">
+					<section className="lastArticles__left" aria-labelledby="bigArticleTitle">
 						<BigArticle />
 						<MediumArticle />
 						<MediumArticle />
 						<MediumArticle />
 						<MediumArticle />
-					</div>
+					</section>
 					<Recommended />
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };

@@ -16,8 +16,8 @@ export const BigArticle: React.FC = () => {
 			</div>
 			<div className="bigArticle__info">
 				<span className="bigArticle__tag">Grammer</span>
-				<h1 className="bigArticle__title">
-					<Link href="#">
+				<h1 className="bigArticle__title" id="bigArticleTitle">
+					<Link href="/blog/article/test">
 						<a className="bigArticle__link">
 							Hernandez leads Blue Jays to wild win over Rangers in Toronto`s 1st home opener since 2019
 						</a>

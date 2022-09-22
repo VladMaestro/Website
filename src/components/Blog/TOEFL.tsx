@@ -5,9 +5,9 @@ import { MediumArticle } from "./MediumArticle";
 
 export const Toefl: React.FC = () => {
 	return (
-		<section className="toefl">
+		<section className="toefl" aria-labelledby="toeflSectionTitle">
 			<div className="container">
-				<h2 className="h2">
+				<h2 className="h2" id="toeflSectionTitle">
 					<Link href="#">
 						<a className="link">
 							TOEFL <span className="toefl__arrow">&#8227;</span>

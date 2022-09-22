@@ -6,11 +6,11 @@ import { SmallArticle } from "./SmallArticle";
 
 export const AllSections: React.FC = () => {
 	return (
-		<section className="allSections">
+		<div className="allSections">
 			<div className="container">
 				<div className="allSections__container">
-					<div className="allSections__item">
-						<h2 className="h2">
+					<section className="allSections__item" aria-labelledby="allSectionsTitle1">
+						<h2 className="h2" id="allSectionsTitle1">
 							<Link href="#">
 								<a className="link">
 									Canada <span className="toefl__arrow">&#8227;</span>
@@ -23,9 +23,9 @@ export const AllSections: React.FC = () => {
 							<SmallArticle />
 							<SmallArticle />
 						</div>
-					</div>
-					<div className="allSections__item">
-						<h2 className="h2">
+					</section>
+					<section className="allSections__item" aria-labelledby="allSectionsTitle2">
+						<h2 className="h2" id="allSectionsTitle2">
 							<Link href="#">
 								<a className="link">
 									World <span className="toefl__arrow">&#8227;</span>
@@ -38,9 +38,9 @@ export const AllSections: React.FC = () => {
 							<SmallArticle />
 							<SmallArticle />
 						</div>
-					</div>
-					<div className="allSections__item">
-						<h2 className="h2">
+					</section>
+					<section className="allSections__item" aria-labelledby="allSectionsTitle3">
+						<h2 className="h2" id="allSectionsTitle3">
 							<Link href="#">
 								<a className="link">
 									Business <span className="toefl__arrow">&#8227;</span>
@@ -53,9 +53,9 @@ export const AllSections: React.FC = () => {
 							<SmallArticle />
 							<SmallArticle />
 						</div>
-					</div>
-					<div className="allSections__item">
-						<h2 className="h2">
+					</section>
+					<section className="allSections__item" aria-labelledby="allSectionsTitle4">
+						<h2 className="h2" id="allSectionsTitle4">
 							<Link href="#">
 								<a className="link">
 									Politics <span className="toefl__arrow">&#8227;</span>
@@ -68,9 +68,9 @@ export const AllSections: React.FC = () => {
 							<SmallArticle />
 							<SmallArticle />
 						</div>
-					</div>
+					</section>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };

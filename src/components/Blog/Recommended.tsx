@@ -4,9 +4,11 @@ import { SmallArticle } from "./SmallArticle";
 
 export const Recommended: React.FC = () => {
 	return (
-		<div className="recommended">
+		<section className="recommended" aria-labelledby="recomendedSectionTitle">
 			<div className="recommended__container">
-				<h2 className="h2 recommended__title">Recommended</h2>
+				<h2 className="h2 recommended__title" id="recomendedSectionTitle">
+					Recommended
+				</h2>
 				<SmallArticle underline />
 				<SmallArticle underline />
 				<SmallArticle underline />
@@ -14,6 +16,6 @@ export const Recommended: React.FC = () => {
 				<SmallArticle underline />
 				<SmallArticle underline />
 			</div>
-		</div>
+		</section>
 	);
 };
