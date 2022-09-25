@@ -70,6 +70,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, data }) => {
 						</li>
 					))}
 				</ul>
+				{data.subtext ? <p className="modal__text">{data.subtext}</p> : null}
 				<button type="button" className="modal__close" onClick={closeModal}>
 					&#10540;
 				</button>

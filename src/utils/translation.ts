@@ -340,10 +340,10 @@ export const translation: translationType = {
 		ru: "2 - 3 урока в неделю",
 	},
 	servicesPrice: {
-		en: "Price: from 14€",
-		es: "Precio: desde 14€",
-		ua: "Ціна: від 14€",
-		ru: "Цена: от 14€",
+		en: "Price: from 16€",
+		es: "Precio: desde 16€",
+		ua: "Ціна: від 16€",
+		ru: "Цена: от 16€",
 	},
 	servicesBtn: {
 		en: "More info",
@@ -388,16 +388,16 @@ export const translation: translationType = {
 		ru: "Рекомендации по ресурсам для самоизучения",
 	},
 	trialItem5: {
-		en: "A first taste of a lesson",
+		en: "The first taste of a lesson",
 		es: "Una primera muestra de una lección",
 		ua: "Перший “смак уроку”",
 		ru: 'Первый "вкус урока"',
 	},
 	trialPrice: {
-		en: "Price: 5€",
-		es: "Precio: 5€",
-		ua: "Ціна: 5€",
-		ru: "Цена: 5€",
+		en: "Free",
+		es: "Está libre",
+		ua: "Безкоштовно",
+		ru: "Бесплатно",
 	},
 	chatTitle: {
 		en: "Chit-Chat Class 💬",
@@ -436,10 +436,10 @@ export const translation: translationType = {
 		ru: "Анализ ошибок",
 	},
 	chatPrice: {
-		en: "Price: from 11€",
-		es: "Precio: desde 11€",
-		ua: "Ціна: від 11€",
-		ru: "Цена: от 11€",
+		en: "Price: from 12€",
+		es: "Precio: desde 12€",
+		ua: "Ціна: від 12€",
+		ru: "Цена: от 12€",
 	},
 	convTitle: {
 		en: "Conversational English 😎",
@@ -606,132 +606,162 @@ export const servicesData: servicesDataType = {
 		en: {
 			title: "Trial Lesson 🎯",
 			text: "Do you want to learn how I can help you with improving your English?:) Just book a trial class with me and we will discuss your learning opportunities!;)",
-			price: ["5€ euros / 25 min"],
+			price: ["Free / 25 min"],
 		},
 		es: {
 			title: "Lección de prueba 🎯",
 			text: "¿Quieres saber cómo puedo ayudarte a mejorar tu inglés? :) ¡Reserva una clase de prueba conmigo y discutiremos tus oportunidades de aprendizaje!;)",
-			price: ["5€ euros / 25 minutos"],
+			price: ["Está libre / 25 minutos"],
 		},
 		ua: {
 			title: "Демо-урок 🎯",
 			text: "Хочете знати, як я можу допомогти вам покращити вашу англійську?:) Просто забронюйте у мене пробне заняття, і ми обговоримо ваші можливості навчання! ;)",
-			price: ["5€ euros / 25 хвилин"],
+			price: ["Безкоштовно / 25 хвилин"],
 		},
 		ru: {
 			title: "Демо-урок 🎯",
 			text: "Хотите знать, как я могу помочь вам улучшить ваш английский?:) Просто забронируйте у меня пробное занятие, и мы обсудим ваши возможности обучения! ;)",
-			price: ["5€ euros / 25 минут"],
+			price: ["Бесплатно / 25 минут"],
 		},
 	},
 	chat: {
 		en: {
 			title: "Chit-Chat Class 💬",
 			text: "Do you want to practice your Oral English? Just book a lesson and we will speak during our class as much as you want about any topics you like!",
-			price: ["11€ euros / 30 min", "12€ euros / 45 min", "14€ euros / 60 min", "18€ euros / 90 min"],
+			price: ["12€ euros / 30 min", "14€ euros / 45 min", "16€ euros / 60 min", "18€ euros / 90 min"],
+			subtext: "P.S. If you buy packages, you can save even more! Text us to get to know more about it😜",
 		},
 		es: {
 			title: "Clase de charla 💬",
 			text: "¿Quieres practicar tu inglés oral? ¡Simplemente reserva una lección y hablaremos durante nuestra clase todo lo que quieras sobre cualquier tema que te guste!",
-			price: ["11€ euros / 30 minutos", "12€ euros / 45 minutos", "14€ euros / 60 minutos", "18€ euros / 90 minutos"],
+			price: ["12€ euros / 30 minutos", "14€ euros / 45 minutos", "16€ euros / 60 minutos", "18€ euros / 90 minutos"],
+			subtext:
+				"PD ¡Si compras paquetes, puedes ahorrar aún más! Envíanos un mensaje de texto para conocer más al respecto 😜",
 		},
 		ua: {
 			title: "Chit-Chat 💬",
 			text: "Хочете попрактикувати свою розмовну англійську? Просто забронюйте урок, і ми будемо говорити під час нашого заняття скільки завгодно на будь-яку тему, яка вам подобається",
-			price: ["11€ euros / 30 хвилин", "12€ euros / 45 хвилин", "14€ euros / 60 хвилин", "18€ euros / 90 хвилин"],
+			price: ["12€ euros / 30 хвилин", "14€ euros / 45 хвилин", "16€ euros / 60 хвилин", "18€ euros / 90 хвилин"],
+			subtext: "P.S. Купуючи комплекти, ви можете заощадити ще більше! Напишіть нам, щоб дізнатися більше про це😜",
 		},
 		ru: {
 			title: "Chit-Chat 💬",
 			text: "Хотите попрактиковать свой разговорный английский? Просто забронируйте урок, и мы будем говорить во время нашего занятия сколь угодно на любую тему, которая вам нравится!",
-			price: ["11€ euros / 30 минут", "12€ euros / 45 минут", "14€ euros / 60 минут", "18€ euros / 90 минут"],
+			price: ["12€ euros / 30 минут", "14€ euros / 45 минут", "16€ euros / 60 минут", "18€ euros / 90 минут"],
+			subtext:
+				"P.S. Если вы покупаете комплекты, вы можете сэкономить еще больше! Напишите нам, чтобы узнать больше об этом😜",
 		},
 	},
 	conversational: {
 		en: {
 			title: "Conversational English 😎",
 			text: "Do you want to speak fluently with foreigners or native speakers? Then this course is right for you! You are going to practice different topics by learning new words, having conversations about them, and completing useful exercises.",
-			price: ["14€ euros / 30 min", "15€ euros / 45 min", "16€ euros / 60 min", "18€ euros / 90 min"],
+			price: ["16€ euros / 30 min", "18€ euros / 45 min", "20€ euros / 60 min", "22€ euros / 90 min"],
+			subtext: "P.S. If you buy packages, you can save even more! Text us to get to know more about it😜",
 		},
 		es: {
 			title: "Inglés conversacional 😎",
 			text: "¿Quieres hablar con fluidez con extranjeros o nativos? ¡Entonces este curso es adecuado para ti! Practicarás diferentes temas aprendiendo nuevas palabras, conversando sobre ellas y completando ejercicios útiles.",
-			price: ["14€ euros / 30 minutos", "15€ euros / 45 minutos", "16€ euros / 60 minutos", "18€ euros / 90 minutos"],
+			price: ["16€ euros / 30 minutos", "18€ euros / 45 minutos", "20€ euros / 60 minutos", "22€ euros / 90 minutos"],
+			subtext:
+				"PD ¡Si compras paquetes, puedes ahorrar aún más! Envíanos un mensaje de texto para conocer más al respecto 😜",
 		},
 		ua: {
 			title: "Розмовна англійська 😎",
 			text: "Бажаєте вільно розмовляти з іноземцями чи носіями мови? Тоді цей курс саме для вас! Ви будете практикувати різні теми, вивчаючи нові слова, обговорюючи їх та виконувати корисні вправи.",
-			price: ["14€ euros / 30 хвилин", "15€ euros / 45 хвилин", "16€ euros / 60 хвилин", "18€ euros / 90 хвилин"],
+			price: ["16€ euros / 30 хвилин", "18€ euros / 45 хвилин", "20€ euros / 60 хвилин", "22€ euros / 90 хвилин"],
+			subtext: "P.S. Купуючи комплекти, ви можете заощадити ще більше! Напишіть нам, щоб дізнатися більше про це😜",
 		},
 		ru: {
 			title: "Разговорный английский 😎",
 			text: "Хотите свободно разговаривать с иностранцами или носителями языка? Тогда этот курс для вас! Вы будете практиковать разные темы, изучая новые слова, обсуждая их и выполнять полезные упражнения.",
-			price: ["14€ euros / 30 минут", "15€ euros / 45 минут", "16€ euros / 60 минут", "18€ euros / 90 минут"],
+			price: ["16€ euros / 30 минут", "18€ euros / 45 минут", "20€ euros / 60 минут", "22€ euros / 90 минут"],
+			subtext:
+				"P.S. Если вы покупаете комплекты, вы можете сэкономить еще больше! Напишите нам, чтобы узнать больше об этом😜",
 		},
 	},
 	general: {
 		en: {
 			title: "General English 🇺🇲",
 			text: "Do you want to improve your General English? Grammar, or listening? Or, maybe, reading and pronunciation? Book a lesson with me, and I customize it for you! We will focus on areas that you want to master the most!",
-			price: ["14€ euros / 30 min", "15€ euros / 45 min", "16€ euros / 60 min", "18€ euros / 90 min"],
+			price: ["16€ euros / 30 min", "18€ euros / 45 min", "20€ euros / 60 min", "22€ euros / 90 min"],
+			subtext: "P.S. If you buy packages, you can save even more! Text us to get to know more about it😜",
 		},
 		es: {
 			title: "Inglés general 🇺🇲",
 			text: "¿Quieres mejorar tu inglés general? ¿Gramática u oído? ¿O, tal vez, lectura y pronunciación? ¡Reserva una lección conmigo y la personalizo para ti! ¡Nos centraremos en las áreas que más quieres dominar!",
-			price: ["14€ euros / 30 minutos", "15€ euros / 45 minutos", "16€ euros / 60 minutos", "18€ euros / 90 minutos"],
+			price: ["16€ euros / 30 minutos", "18€ euros / 45 minutos", "20€ euros / 60 minutos", "22€ euros / 90 minutos"],
+			subtext:
+				"PD ¡Si compras paquetes, puedes ahorrar aún más! Envíanos un mensaje de texto para conocer más al respecto 😜",
 		},
 		ua: {
 			title: "Повсякденна англійська 🇺🇲",
 			text: "Бажаєте покращити свою загальну англійську? Граматика чи слухання? Чи, може, читання і вимова? Замовляйте урок у мене, і я підготую його для вас! Ми зосередимося на скілах, які ви найбільше хочете опанувати!",
-			price: ["14€ euros / 30 хвилин", "15€ euros / 45 хвилин", "16€ euros / 60 хвилин", "18€ euros / 90 хвилин"],
+			price: ["16€ euros / 30 хвилин", "18€ euros / 45 хвилин", "20€ euros / 60 хвилин", "22€ euros / 90 хвилин"],
+			subtext: "P.S. Купуючи комплекти, ви можете заощадити ще більше! Напишіть нам, щоб дізнатися більше про це😜",
 		},
 		ru: {
 			title: "Повседневный английский 🇺🇲",
 			text: "Хотите улучшить свой общий английский? Грамматика или слушание? Или, может, чтение и произношение? Заказывайте урок у меня, и я приготовлю его для вас! Мы сосредоточимся на скилах, которые вы больше всего хотите овладеть!",
-			price: ["14€ euros / 30 минут", "15€ euros / 45 минут", "16€ euros / 60 минут", "18€ euros / 90 минут"],
+			price: ["16€ euros / 30 минут", "18€ euros / 45 минут", "20€ euros / 60 минут", "22€ euros / 90 минут"],
+			subtext:
+				"P.S. Если вы покупаете комплекты, вы можете сэкономить еще больше! Напишите нам, чтобы узнать больше об этом😜",
 		},
 	},
 	busines: {
 		en: {
 			title: "Business English/ Interview Preparation 💼",
 			text: "Are you looking for a course to improve your Business English? Or, maybe, you need to prepare for your job or school interview quickly. Perhaps, you want to learn how to write business emails so they would look professional. Or you want to have a good presentation for the next meeting. This course will help you with this! Book a trial lesson and I will tell you what we can do to improve your Business English or prepare you well for your job interview!;)",
-			price: ["14€ euros / 30 min", "15€ euros / 45 min", "16€ euros / 60 min", "18€ euros / 90 min"],
+			price: ["16€ euros / 30 min", "18€ euros / 45 min", "20€ euros / 60 min", "22€ euros / 90 min"],
+			subtext: "P.S. If you buy packages, you can save even more! Text us to get to know more about it😜",
 		},
 		es: {
 			title: "Inglés de negocios/ preparación para entrevistas 💼",
 			text: "Estás buscando un curso para mejorar tu inglés de negocios? O, tal vez, necesitas prepararte rápidamente para una entrevista de trabajo o escolar. Tal vez quieres aprender a escribir correos electrónicos comerciales y que parezcan profesionales. O quieres tener una buena presentación para la próxima reunión. ¡Este curso te ayudará con todo eso! ¡Reserva una lección de prueba y te diré lo que podemos hacer para mejorar tu inglés de negocios o prepararte bien para tu entrevista de trabajo!;)",
-			price: ["14€ euros / 30 minutos", "15€ euros / 45 minutos", "16€ euros / 60 minutos", "18€ euros / 90 minutos"],
+			price: ["16€ euros / 30 minutos", "18€ euros / 45 minutos", "20€ euros / 60 minutos", "22€ euros / 90 minutos"],
+			subtext:
+				"PD ¡Si compras paquetes, puedes ahorrar aún más! Envíanos un mensaje de texto para conocer más al respecto 😜",
 		},
 		ua: {
 			title: "Ділова англійська / Підготовка до інтерв'ю 💼",
 			text: "Шукаєте курс, щоб покращити свою ділову англійську? Або, можливо, вам потрібно швидко підготуватися до вашої робочої чи шкільної співбесіди. Можливо, ви хочете навчитися писати ділові листи, щоб вони виглядали професійно. Або ви хочете мати гарну презентацію для наступної зустрічі. Цей курс допоможе вам у цьому! Запишіться на пробний урок, і я розповім вам, що ми можемо зробити, щоб покращити вашу ділову англійську або добре підготувати вас до співбесіди! ;)",
-			price: ["14€ euros / 30 хвилин", "15€ euros / 45 хвилин", "16€ euros / 60 хвилин", "18€ euros / 90 хвилин"],
+			price: ["16€ euros / 30 хвилин", "18€ euros / 45 хвилин", "20€ euros / 60 хвилин", "22€ euros / 90 хвилин"],
+			subtext: "P.S. Купуючи комплекти, ви можете заощадити ще більше! Напишіть нам, щоб дізнатися більше про це😜",
 		},
 		ru: {
 			title: "Деловой английский / Подготовка к интервью 💼",
 			text: "Ищете курс, чтобы улучшить свой деловой английский? Или, возможно, вам нужно быстро подготовиться к вашему рабочему или школьному собеседованию. Возможно, вы хотите научиться писать деловые письма, чтобы они выглядели профессионально. Или вы хотите сделать хорошую презентацию для следующей встречи. Этот курс поможет вам! Запишитесь на пробный урок, и я расскажу вам, что мы можем сделать, чтобы улучшить ваш деловой английский или хорошо подготовить вас к собеседованию! ;)",
-			price: ["14€ euros / 30 минут", "15€ euros / 45 минут", "16€ euros / 60 минут", "18€ euros / 90 минут"],
+			price: ["16€ euros / 30 минут", "18€ euros / 45 минут", "20€ euros / 60 минут", "22€ euros / 90 минут"],
+			subtext:
+				"P.S. Если вы покупаете комплекты, вы можете сэкономить еще больше! Напишите нам, чтобы узнать больше об этом😜",
 		},
 	},
 	exam: {
 		en: {
 			title: "TOEFL/ Duolingo/ IELTS/ English Exam Preparation 📚",
 			text: "Do you need to prepare quickly for your TOEFL/ Duolingo/ English Exam? Or do you want to improve specific skills for the TOEFL / Duolingo/ English Exam to get a better score? Then I am here for you! Book a trial class and you will learn what we will do together during classes so you will get the maximum score!",
-			price: ["14€ euros / 30 min", "15€ euros / 45 min", "16€ euros / 60 min", "18€ euros / 90 min"],
+			price: ["16€ euros / 30 min", "18€ euros / 45 min", "20€ euros / 60 min", "22€ euros / 90 min"],
+			subtext: "P.S. If you buy packages, you can save even more! Text us to get to know more about it😜",
 		},
 		es: {
 			title: "TOEFL/ Duolingo/ IELTS/ Preparación para exámenes de inglés 📚",
 			text: "¿Necesita prepararse rápidamente para su examen TOEFL/ Duolingo/ English? ¿O desea mejorar habilidades específicas para el examen TOEFL / Duolingo / English para obtener una mejor puntuación? ¡Entonces estoy aquí para ti! ¡Reserva una clase de prueba y descubre lo que haremos juntos durante las clases para que tengas la nota máxima!",
-			price: ["14€ euros / 30 minutos", "15€ euros / 45 minutos", "16€ euros / 60 minutos", "18€ euros / 90 minutos"],
+			price: ["16€ euros / 30 minutos", "18€ euros / 45 minutos", "20€ euros / 60 minutos", "22€ euros / 90 minutos"],
+			subtext:
+				"PD ¡Si compras paquetes, puedes ahorrar aún más! Envíanos un mensaje de texto para conocer más al respecto 😜",
 		},
 		ua: {
 			title: "TOEFL/ Duolingo/ IELTS/ Підготовка до тестів з англійської мови 📚",
 			text: "Вам потрібно швидко підготуватися до іспиту з TOEFL/ Duolingo або іншого тесту? Або ви хочете покращити певні навички для іспиту, щоб отримати кращий бал? Тоді я тут, щоб вам навчити! Запишіться на пробне заняття, і ви дізнаєтеся, що ми будемо робити разом під час занять, щоб ви отримали максимальний бал!",
-			price: ["14€ euros / 30 хвилин", "15€ euros / 45 хвилин", "16€ euros / 60 хвилин", "18€ euros / 90 хвилин"],
+			price: ["16€ euros / 30 хвилин", "18€ euros / 45 хвилин", "20€ euros / 60 хвилин", "22€ euros / 90 хвилин"],
+			subtext: "P.S. Купуючи комплекти, ви можете заощадити ще більше! Напишіть нам, щоб дізнатися більше про це😜",
 		},
 		ru: {
 			title: "TOEFL/ Duolingo/ IELTS/ Подготовка к тесту по английскому языку 📚",
 			text: "Вам нужно быстро подготовиться к экзамену по TOEFL/ Duolingo или другому тесту? Или вы хотите улучшить некоторые навыки для экзамена, чтобы получить лучший балл? Тогда я здесь, чтобы вам помочь! Запишитесь на демо-урок, и вы узнаете, что мы будем делать вместе на занятиях, чтобы вы получили максимальный балл!",
-			price: ["14€ euros / 30 минут", "15€ euros / 45 минут", "16€ euros / 60 минут", "18€ euros / 90 минут"],
+			price: ["16€ euros / 30 минут", "18€ euros / 45 минут", "20€ euros / 60 минут", "22€ euros / 90 минут"],
+			subtext:
+				"P.S. Если вы покупаете комплекты, вы можете сэкономить еще больше! Напишите нам, чтобы узнать больше об этом😜",
 		},
 	},
 };
