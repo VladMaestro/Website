@@ -17,11 +17,9 @@
 	.toefl__container {
 		grid-template-columns: repeat(2, 1fr);
 	}
-}
 
-@media screen and (min-width: 1024px) {
-	.toefl__container {
-		grid-template-columns: repeat(3, 1fr);
+	.toefl__container > .mediumllArticle:last-child {
+		display: none;
 	}
 }
 
@@ -31,6 +29,6 @@
 	}
 
 	.toefl__container > .mediumllArticle:last-child {
-		display: none;
+		display: grid;
 	}
 }
