@@ -16,8 +16,6 @@
 @media screen and (min-width: 1280px) {
 	.recommended__container {
 		grid-template-columns: 1fr;
-		position: sticky;
-		top: 5px;
 	}
 
 	.recommended__title {
