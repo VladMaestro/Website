@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useState, useEffect, MouseEvent, ChangeEvent } from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
 
@@ -32,17 +32,17 @@ const swiperOptions = {
 };
 
 const Home: NextPage = () => {
-	const [modalIsOpen, setModal] = React.useState(false);
-	const [modalData, setModalData] = React.useState<serviceDataType>({
+	const [modalIsOpen, setModal] = useState(false);
+	const [modalData, setModalData] = useState<serviceDataType>({
 		title: "",
 		text: "",
 		price: [""],
 	});
-	const [languageSelect, setLanguageSelect] = React.useState("en");
-	const [calendar, setCalendar] = React.useState(false);
+	const [languageSelect, setLanguageSelect] = useState("en");
+	const [calendar, setCalendar] = useState(false);
 
-	const calendarSectionRef = React.useRef<HTMLElement>(null);
-	const languageSelectRef = React.useRef<HTMLSelectElement>(null);
+	const calendarSectionRef = useRef<HTMLElement>(null);
+	const languageSelectRef = useRef<HTMLSelectElement>(null);
 
 	const scrollToCalendar = () => {
 		scrollTo({
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
 		});
 	};
 
-	const openModal = (event: React.MouseEvent<HTMLButtonElement>) => {
+	const openModal = (event: MouseEvent<HTMLButtonElement>) => {
 		const serviceName = event.currentTarget.getAttribute("data-service");
 
 		if (serviceName) {
@@ -66,13 +66,13 @@ const Home: NextPage = () => {
 		setModal(false);
 	};
 
-	const languageSelectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+	const languageSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
 		const value = event.target.value;
 		localStorage.setItem("language", value);
 		setLanguageSelect(value);
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const languageType = localStorage.getItem("language") || "";
 		if (languageType) {
 			setLanguageSelect(languageType);
