@@ -1,12 +1,12 @@
-import React from "react";
+import { ReactNode, FC } from "react";
 
 import { BlogFooter, BlogHeader } from "../components";
 
 type BlogLayoutProps = {
-	children: React.ReactNode;
+	children: ReactNode;
 };
 
-export const BlogLayout: React.FC<BlogLayoutProps> = ({ children }) => {
+export const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
 	return (
 		<>
 			<BlogHeader />
