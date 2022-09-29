@@ -1,22 +1,8 @@
 .subscribe {
-	position: relative;
 	background-color: var(--secondary-bg);
 	padding: 60px 0;
 	margin-top: 40px;
 	overflow: hidden;
-}
-
-.subscribe__dec {
-	position: absolute;
-	height: 225%;
-	width: auto;
-	top: 0;
-	right: 0;
-}
-
-.subscribe__img {
-	height: 100%;
-	width: 100%;
 }
 
 .subscribe__title {
@@ -51,4 +37,14 @@
 	font-size: 14px;
 	line-height: 16px;
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.subscribe__info {
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	text-decoration: underline;
+	text-decoration-color: var(--accent);
+	text-decoration-thickness: 3px;
+	margin: 10px 0 0 0;
 }
