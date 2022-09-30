@@ -1,7 +1,11 @@
-import React from "react";
+import { FC } from "react";
 import Link from "next/link";
 
-export const Tags: React.FC = () => {
+type TagsProps = {
+	data: Array<{ name: string; slug: string }>;
+};
+
+export const Tags: FC<TagsProps> = ({ data }) => {
 	return (
 		<section className="tags" aria-labelledby="tagsSectionTitle">
 			<div className="container">
@@ -9,42 +13,11 @@ export const Tags: React.FC = () => {
 					All Tags
 				</h2>
 				<div className="tags__container">
-					<Link href="/blog/grammer">
-						<a className="tags__link">Grammar</a>
-					</Link>
-					<Link href="/blog/toefl">
-						<a className="tags__link">TOEFL</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">Grammar</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">TOEFL</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">Grammar</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">TOEFL</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">Grammar</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">TOEFL</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">Grammar</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">TOEFL</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">Grammar</a>
-					</Link>
-					<Link href="#">
-						<a className="tags__link">TOEFL</a>
-					</Link>
+					{data.map((item) => (
+						<Link href={`/blog/${item.slug}`} key={item.slug}>
+							<a className="tags__link">{item.name}</a>
+						</Link>
+					))}
 				</div>
 			</div>
 		</section>
