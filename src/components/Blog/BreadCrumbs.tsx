@@ -1,12 +1,12 @@
-import React from "react";
+import { FC, ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export const BreadCrumbs: React.FC = () => {
+export const BreadCrumbs: FC = () => {
 	const router = useRouter();
 	const breadCrumbs = router.asPath.split("/");
 
-	const arr: React.ReactNode[] = [];
+	const arr: ReactNode[] = [];
 	let breadCrumbsString = "/";
 
 	breadCrumbs.map((item, index) => {

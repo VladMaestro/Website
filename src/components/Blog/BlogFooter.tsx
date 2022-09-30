@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const BlogFooter: React.FC = () => {
+export const BlogFooter: FC = () => {
 	return (
 		<footer className="footer">
 			<div className="container">
