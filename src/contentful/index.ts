@@ -1,18 +1,21 @@
 import { gql } from "@apollo/client";
 import {
-	Get5ToeflPostsQuery,
-	Get5ToeflPostsQueryVariables,
-	GetAllPostsSlugsQuery,
-	GetAllPostsSlugsQueryVariables,
 	GetAllTagsQuery,
 	GetAllTagsQueryVariables,
+	GetAllPostsSlugsQuery,
+	GetAllPostsSlugsQueryVariables,
+	GetFirst5PostsSlugsQuery,
+	GetFirst5PostsSlugsQueryVariables,
 	GetPostBySlugQuery,
 	GetPostBySlugQueryVariables,
 	GetPostsByTagQuery,
 	GetPostsByTagQueryVariables,
+	MainPageQuery,
+	MainPageQueryVariables,
 } from "../@types/contentfulSchema";
 
 import { apolloClient } from "./apolloClient";
+import { mixArticleFragment, smallArticleFragment } from "./fragments";
 
 export const getAllTags = async () => {
 	const allTagsQuery = gql`
@@ -33,30 +36,94 @@ export const getAllTags = async () => {
 	return data;
 };
 
-export const get5ToeflPosts = async () => {
-	const fiveToeflPosts = gql`
-		query get5ToeflPosts {
-			postCollection(limit: 5, where: { tag: { name: "TOEFL" } }) {
+export const getFirst5PostsSlugs = async () => {
+	const first5PostsSlugs = gql`
+		query getFirst5PostsSlugs {
+			postCollection(limit: 5, where: { recommended: false }) {
 				items {
 					slug
-					title
-					tag {
-						name
-					}
-					sys {
-						publishedAt
-					}
-					previewImg {
-						url
-						title
-					}
 				}
 			}
 		}
 	`;
 
-	const { data } = await apolloClient.query<Get5ToeflPostsQuery, Get5ToeflPostsQueryVariables>({
-		query: fiveToeflPosts,
+	const { data } = await apolloClient.query<GetFirst5PostsSlugsQuery, GetFirst5PostsSlugsQueryVariables>({
+		query: first5PostsSlugs,
+	});
+
+	return data;
+};
+
+export const getMainPageData = async (first5Slugs: string[]) => {
+	const mainPageData = gql`
+		${smallArticleFragment}
+		${mixArticleFragment}
+
+		query mainPage($first5Slugs: [String]) {
+			tagCollection {
+				items {
+					name
+					slug
+				}
+			}
+			posts: postCollection(limit: 5, where: { recommended: false }) {
+				items {
+					...mixArticle
+				}
+			}
+			recommended: postCollection(limit: 5, where: { recommended: true }) {
+				items {
+					...smallArticle
+				}
+			}
+			toefl: postCollection(
+				limit: 5
+				where: { AND: [{ tag: { name: "TOEFL" } }, { recommended: false }, { slug_not_in: $first5Slugs }] }
+			) {
+				items {
+					...mixArticle
+				}
+			}
+			grammar: postCollection(
+				limit: 4
+				where: { AND: [{ tag: { name: "Grammar" } }, { recommended: false }, { slug_not_in: $first5Slugs }] }
+			) {
+				items {
+					...mixArticle
+				}
+			}
+			usCulture: postCollection(
+				limit: 4
+				where: { AND: [{ tag: { name: "U.S. Culture" } }, { recommended: false }, { slug_not_in: $first5Slugs }] }
+			) {
+				items {
+					...mixArticle
+				}
+			}
+			det: postCollection(
+				limit: 4
+				where: { AND: [{ tag: { name: "DET" } }, { recommended: false }, { slug_not_in: $first5Slugs }] }
+			) {
+				items {
+					...mixArticle
+				}
+			}
+			speakingTips: postCollection(
+				limit: 4
+				where: { AND: [{ tag: { name: "Speaking Tips" } }, { recommended: false }, { slug_not_in: $first5Slugs }] }
+			) {
+				items {
+					...mixArticle
+				}
+			}
+		}
+	`;
+
+	const { data } = await apolloClient.query<MainPageQuery, MainPageQueryVariables>({
+		query: mainPageData,
+		variables: {
+			first5Slugs,
+		},
 	});
 
 	return data;
