@@ -9,4 +9,5 @@ export * from "./Blog/LastArticles";
 export * from "./Blog/TOEFL";
 export * from "./Blog/BlogFooter";
 export * from "./Blog/AllSections";
+export * from "./Blog/Subscribe";
 export * from "./Blog/BreadCrumbs";
