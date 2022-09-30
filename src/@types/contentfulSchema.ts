@@ -368,6 +368,7 @@ export type Post = Entry & {
   contentfulMetadata: ContentfulMetadata;
   linkedFrom: Maybe<PostLinkingCollections>;
   previewImg: Maybe<Asset>;
+  recommended: Maybe<Scalars['Boolean']>;
   slug: Maybe<Scalars['String']>;
   smallDescription: Maybe<Scalars['String']>;
   sys: Sys;
@@ -387,6 +388,12 @@ export type PostLinkedFromArgs = {
 export type PostPreviewImgArgs = {
   locale: InputMaybe<Scalars['String']>;
   preview: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** Blog post [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/post) */
+export type PostRecommendedArgs = {
+  locale: InputMaybe<Scalars['String']>;
 };
 
 
@@ -433,6 +440,9 @@ export type PostFilter = {
   OR: InputMaybe<Array<InputMaybe<PostFilter>>>;
   contentfulMetadata: InputMaybe<ContentfulMetadataFilter>;
   previewImg_exists: InputMaybe<Scalars['Boolean']>;
+  recommended: InputMaybe<Scalars['Boolean']>;
+  recommended_exists: InputMaybe<Scalars['Boolean']>;
+  recommended_not: InputMaybe<Scalars['Boolean']>;
   slug: InputMaybe<Scalars['String']>;
   slug_contains: InputMaybe<Scalars['String']>;
   slug_exists: InputMaybe<Scalars['Boolean']>;
@@ -476,6 +486,8 @@ export type PostLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum PostOrder {
+  RecommendedAsc = 'recommended_ASC',
+  RecommendedDesc = 'recommended_DESC',
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -634,7 +646,7 @@ export type SysFilter = {
   publishedVersion_not_in: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
 };
 
-/** [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
+/** Tag for Blog post [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
 export type Tag = Entry & {
   __typename?: 'Tag';
   contentfulMetadata: ContentfulMetadata;
@@ -645,19 +657,19 @@ export type Tag = Entry & {
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
+/** Tag for Blog post [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
 export type TagLinkedFromArgs = {
   allowedLocales: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
+/** Tag for Blog post [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
 export type TagNameArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
+/** Tag for Blog post [See type definition](https://app.contentful.com/spaces/yl6dtigq9wfo/content_types/tag) */
 export type TagSlugArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
@@ -749,15 +761,26 @@ export type CfTagNestedFilter = {
   sys: InputMaybe<SysFilter>;
 };
 
+export type SmallArticleFragment = { __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any } };
+
+export type MixArticleFragment = { __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } };
+
 export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllTagsQuery = { __typename?: 'Query', tagCollection: { __typename?: 'TagCollection', items: Array<{ __typename?: 'Tag', name: string, slug: string }> } };
 
-export type Get5ToeflPostsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetFirst5PostsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Get5ToeflPostsQuery = { __typename?: 'Query', postCollection: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> } };
+export type GetFirst5PostsSlugsQuery = { __typename?: 'Query', postCollection: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string }> } };
+
+export type MainPageQueryVariables = Exact<{
+  first5Slugs: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>;
+}>;
+
+
+export type MainPageQuery = { __typename?: 'Query', tagCollection: { __typename?: 'TagCollection', items: Array<{ __typename?: 'Tag', name: string, slug: string }> }, posts: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> }, recommended: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any } }> }, toefl: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> }, grammar: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> }, usCulture: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> }, det: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> }, speakingTips: { __typename?: 'PostCollection', items: Array<{ __typename?: 'Post', slug: string, title: string, smallDescription: string, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any }, previewImg: { __typename?: 'Asset', url: string, title: string } }> } };
 
 export type GetPostsByTagQueryVariables = Exact<{
   tagName: InputMaybe<Scalars['String']>;
