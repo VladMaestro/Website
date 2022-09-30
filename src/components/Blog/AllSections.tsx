@@ -1,72 +1,81 @@
-import React from "react";
+import { FC } from "react";
 import Link from "next/link";
 
 import { MediumArticle } from "./MediumArticle";
 import { SmallArticle } from "./SmallArticle";
 
-export const AllSections: React.FC = () => {
+import { mixArticleType } from "../../@types/articles";
+
+type AllSectionsProps = {
+	grammar: mixArticleType[];
+	usCulture: mixArticleType[];
+	det: mixArticleType[];
+	speakingTips: mixArticleType[];
+};
+
+export const AllSections: FC<AllSectionsProps> = ({ grammar, usCulture, det, speakingTips }) => {
 	return (
 		<div className="allSections">
 			<div className="container">
 				<div className="allSections__container">
 					<section className="allSections__item" aria-labelledby="allSectionsTitle1">
 						<h2 className="h2" id="allSectionsTitle1">
-							<Link href="#">
+							<Link href="/blog/grammar">
 								<a className="link">
-									Canada <span className="toefl__arrow">&#8227;</span>
+									Grammar <span className="toefl__arrow">&#8227;</span>
 								</a>
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle />
-							<SmallArticle />
-							<SmallArticle />
-							<SmallArticle />
+							<MediumArticle data={grammar[0]} />
+							{grammar.slice(1).map((item) => (
+								<SmallArticle key={item.slug} data={item} />
+							))}
 						</div>
 					</section>
 					<section className="allSections__item" aria-labelledby="allSectionsTitle2">
 						<h2 className="h2" id="allSectionsTitle2">
-							<Link href="#">
+							<Link href="/blog/us-culture">
 								<a className="link">
-									World <span className="toefl__arrow">&#8227;</span>
+									US Culture <span className="toefl__arrow">&#8227;</span>
 								</a>
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle />
-							<SmallArticle />
-							<SmallArticle />
-							<SmallArticle />
+							<MediumArticle data={usCulture[0]} />
+							{usCulture.slice(1).map((item) => (
+								<SmallArticle key={item.slug} data={item} />
+							))}
 						</div>
 					</section>
 					<section className="allSections__item" aria-labelledby="allSectionsTitle3">
 						<h2 className="h2" id="allSectionsTitle3">
-							<Link href="#">
+							<Link href="/blog/det">
 								<a className="link">
-									Business <span className="toefl__arrow">&#8227;</span>
+									DET <span className="toefl__arrow">&#8227;</span>
 								</a>
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle />
-							<SmallArticle />
-							<SmallArticle />
-							<SmallArticle />
+							<MediumArticle data={det[0]} />
+							{det.slice(1).map((item) => (
+								<SmallArticle key={item.slug} data={item} />
+							))}
 						</div>
 					</section>
 					<section className="allSections__item" aria-labelledby="allSectionsTitle4">
 						<h2 className="h2" id="allSectionsTitle4">
-							<Link href="#">
+							<Link href="/blog/speaking-tips">
 								<a className="link">
-									Politics <span className="toefl__arrow">&#8227;</span>
+									Speaking Tips <span className="toefl__arrow">&#8227;</span>
 								</a>
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle />
-							<SmallArticle />
-							<SmallArticle />
-							<SmallArticle />
+							<MediumArticle data={speakingTips[0]} />
+							{speakingTips.slice(1).map((item) => (
+								<SmallArticle key={item.slug} data={item} />
+							))}
 						</div>
 					</section>
 				</div>
