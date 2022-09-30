@@ -1,25 +1,97 @@
-import React, { ReactElement } from "react";
+import { useEffect, useRef, useState, ReactElement } from "react";
+import Image from "next/image";
+import { GetStaticProps, GetStaticPaths } from "next";
+import { DiscussionEmbed } from "disqus-react";
+import { ParsedUrlQuery } from "querystring";
 
 import type { NextPageWithLayout } from "../../_app";
 import { BlogLayout } from "../../../Layouts/BlogLayout";
-import { MediumArticle, SmallArticle, BreadCrumbs } from "../../../components";
-import Image from "next/image";
 
-const Article: NextPageWithLayout = () => {
+import { getAllPostsSlugs, getPostBySlug } from "../../../contentful";
+import { formatDate } from "../../../utils/formatDate";
+
+import { GetPostBySlugQuery } from "../../../@types/contentfulSchema";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	const slugs = await getAllPostsSlugs();
+
+	return {
+		paths: slugs.postCollection.items.map((item) => ({ params: { slug: item.slug } })),
+		fallback: false,
+	};
+};
+
+type Props = {
+	post: GetPostBySlugQuery;
+};
+
+interface Params extends ParsedUrlQuery {
+	slug: string;
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
+	const slugName = context.params!.slug;
+
+	const post = await getPostBySlug(slugName);
+
+	return {
+		props: { post },
+	};
+};
+
+type ArticleProps = {
+	post: GetPostBySlugQuery;
+};
+
+const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
+	const [comments, setComments] = useState(false);
+
+	const disqusRef = useRef<HTMLDivElement>(null);
+
+	const { title, smallDescription, previewImg, sys, tag } = post.postCollection.items[0];
+
+	useEffect(() => {
+		const obserOptions = {
+			root: null,
+			rootMargin: "0px",
+			threshols: 0.7,
+		};
+
+		const observerCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					setComments(true);
+					observer.unobserve(entry.target);
+				}
+			});
+		};
+
+		const disqusDiv = disqusRef.current;
+
+		const observer = new IntersectionObserver(observerCallback, obserOptions);
+		if (disqusDiv) observer.observe(disqusDiv);
+
+		return () => {
+			if (disqusDiv) observer.unobserve(disqusDiv);
+		};
+	}, []);
+
 	return (
 		<article className="article">
 			<div className="article__container">
-				<h1 className="article__title">
-					Hernandez leads Blue Jays to wild win over Rangers in Toronto`s 1st home opener since 2019
-				</h1>
-				<p className="article__description">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, ducimus nostrum fugit, possimus quae expedita
-					iure maiores quo dicta impedit sunt autem error consectetur porro inventore debitis cum alias quis.
-				</p>
+				<h1 className="article__title">{title}</h1>
+				<p className="article__description">{smallDescription}</p>
+				<div className="article__meta">
+					<span className="tag">{tag.name}</span>
+					<span className="time">{formatDate(sys.publishedAt)}</span>
+				</div>
 				<div className="article__picture">
 					<Image
-						src="/img/lesson/lesson.jpg"
-						alt="Mountains"
+						src={previewImg.url}
+						alt={previewImg.title}
+						placeholder="blur"
+						blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkNWQ1ZDUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMmUyZTIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2cxKSIvPjwvc3ZnPg=="
+						style={{ borderRadius: 10 }}
 						layout="fill"
 						objectFit="cover"
 						className="article__img"
@@ -55,6 +127,7 @@ const Article: NextPageWithLayout = () => {
 					<li className="article__item">Lorem ipsum dolor sit.</li>
 					<li className="article__item">Lorem ipsum dolor sit amet.</li>
 				</ol>
+				<div ref={disqusRef}>{comments && <DiscussionEmbed shortname="easyen-1" config={{ title }} />}</div>
 			</div>
 		</article>
 	);
