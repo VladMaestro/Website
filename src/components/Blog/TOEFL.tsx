@@ -1,26 +1,29 @@
-import React from "react";
+import { FC } from "react";
 import Link from "next/link";
 
 import { MediumArticle } from "./MediumArticle";
 
-export const Toefl: React.FC = () => {
+import { mediumArticleType } from "../../@types/articles";
+
+type ToeflProps = {
+	data: mediumArticleType[];
+};
+
+export const Toefl: FC<ToeflProps> = ({ data }) => {
 	return (
 		<section className="toefl" aria-labelledby="toeflSectionTitle">
 			<div className="container">
 				<h2 className="h2" id="toeflSectionTitle">
-					<Link href="#">
+					<Link href="/blog/toefl">
 						<a className="link">
 							TOEFL <span className="toefl__arrow">&#8227;</span>
 						</a>
 					</Link>
 				</h2>
 				<div className="toefl__container">
-					<MediumArticle />
-					<MediumArticle />
-					<MediumArticle />
-					<MediumArticle />
-					<MediumArticle />
-					<MediumArticle />
+					{data.map((item) => (
+						<MediumArticle key={item.slug} data={item} />
+					))}
 				</div>
 			</div>
 		</section>
