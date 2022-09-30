@@ -3,32 +3,48 @@
 }
 
 .lastArticles__container {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 40px;
 }
 
 .lastArticles__left {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+.lastArticles__wrapper {
 	display: grid;
-	gap: 30px;
+	gap: 20px;
 }
 
 @media screen and (min-width: 768px) {
+	.lastArticles__container {
+		flex-direction: row;
+	}
+
 	.lastArticles__left {
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 1fr auto;
-		row-gap: 60px;
-		column-gap: 20px;
+		flex: 1;
+	}
+
+	.lastArticles__left > .mediumllArticle:last-child {
+		display: none;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.lastArticles__left {
-		grid-template-columns: repeat(4, 1fr);
+	.lastArticles__wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.lastArticles__left > .mediumllArticle:last-child {
+		display: grid;
 	}
 }
 
-@media screen and (min-width: 1280px) {
-	.lastArticles__container {
-		grid-template-columns: 1fr 250px;
+@media screen and (min-width: 1440px) {
+	.lastArticles__wrapper {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }

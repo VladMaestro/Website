@@ -10,6 +10,10 @@
 	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.mediumllArticle__picture > span {
+	border-radius: 10px;
+}
+
 .mediumllArticle__img {
 	border-radius: 10px;
 }
