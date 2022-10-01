@@ -22,7 +22,7 @@ export const Subscribe: FC = () => {
 			headers: {
 				accept: "application/json",
 				"content-type": "application/json",
-				"api-key": "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",
+				"api-key": process.env.NEXT_PUBLIC_SENDINBLUE_API_KEY!,
 			},
 			body: JSON.stringify({
 				email: emailInput,
