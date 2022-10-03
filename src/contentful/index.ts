@@ -234,6 +234,30 @@ export const getPostBySlug = async (slug: string | string[]) => {
 					smallDescription
 					text {
 						json
+						links {
+							entries {
+								hyperlink {
+									sys {
+										id
+									}
+									... on Post {
+										title
+										slug
+									}
+								}
+							}
+							assets {
+								block {
+									sys {
+										id
+									}
+									title
+									url
+									width
+									height
+								}
+							}
+						}
 					}
 					tag {
 						name

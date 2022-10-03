@@ -52,3 +52,36 @@ export type mixArticleType = {
 		title: string;
 	};
 };
+
+export type TextLinks = {
+	entries: {
+		hyperlink: Array<
+			| {
+					__typename?: "Post";
+					title: string;
+					slug: string;
+					sys: {
+						id: string;
+					};
+			  }
+			| {
+					__typename?: "Tag";
+					sys: {
+						id: string;
+					};
+			  }
+		>;
+	};
+	assets: {
+		block: Array<{
+			__typename?: "Asset";
+			title: string;
+			url: string;
+			sys: {
+				id: string;
+			};
+			width: number;
+			height: number;
+		}>;
+	};
+};

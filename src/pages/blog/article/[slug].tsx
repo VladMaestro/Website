@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState, ReactElement } from "react";
+import { useEffect, useRef, useState, ReactElement, ReactNode } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { DiscussionEmbed } from "disqus-react";
 import { ParsedUrlQuery } from "querystring";
+import { Block, BLOCKS, Inline, INLINES } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import type { NextPageWithLayout } from "../../_app";
 import { BlogLayout } from "../../../Layouts/BlogLayout";
@@ -11,6 +14,7 @@ import { Subscribe } from "../../../components";
 import { getAllPostsSlugs, getPostBySlug } from "../../../contentful";
 import { formatDate } from "../../../utils/formatDate";
 
+import { TextLinks } from "../../../@types/articles";
 import { GetPostBySlugQuery } from "../../../@types/contentfulSchema";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -49,7 +53,7 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 
 	const disqusRef = useRef<HTMLDivElement>(null);
 
-	const { title, smallDescription, previewImg, sys, tag } = post.postCollection.items[0];
+	const { title, smallDescription, previewImg, sys, tag, text } = post.postCollection.items[0];
 
 	useEffect(() => {
 		const obserOptions = {
@@ -77,6 +81,96 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 		};
 	}, []);
 
+	function renderOptions(links: TextLinks) {
+		const assetMap = new Map<
+			string,
+			{
+				title: string;
+				url: string;
+				sys: {
+					id: string;
+				};
+				width: number;
+				height: number;
+			}
+		>();
+		for (const asset of links.assets.block) {
+			assetMap.set(asset.sys.id, asset);
+		}
+
+		const hyperLinksMap = new Map<
+			string,
+			| {
+					__typename?: "Post";
+					title: string;
+					slug: string;
+					sys: {
+						id: string;
+					};
+			  }
+			| {
+					__typename?: "Tag";
+					sys: {
+						id: string;
+					};
+			  }
+		>();
+		for (const entry of links.entries.hyperlink) {
+			hyperLinksMap.set(entry.sys.id, entry);
+		}
+
+		return {
+			renderNode: {
+				[BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
+					const asset = assetMap.get(node.data.target.sys.id);
+					return (
+						<div className="article__picture">
+							<Image
+								width={asset?.width}
+								height={asset?.height}
+								src={asset!.url}
+								placeholder="blur"
+								blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkNWQ1ZDUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMmUyZTIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2cxKSIvPjwvc3ZnPg=="
+								style={{ borderRadius: 10 }}
+								alt={asset?.title}
+								className="article__img"
+							/>
+						</div>
+					);
+				},
+				[BLOCKS.PARAGRAPH]: (node: Block | Inline, children: ReactNode) => {
+					return <p className="article__text">{children}</p>;
+				},
+				[BLOCKS.HEADING_2]: (node: Block | Inline, children: ReactNode) => <h2 className="article__h2">{children}</h2>,
+				[BLOCKS.HEADING_3]: (node: Block | Inline, children: ReactNode) => <h3 className="article__h3">{children}</h3>,
+				[BLOCKS.HEADING_4]: (node: Block | Inline, children: ReactNode) => <h4 className="article__h4">{children}</h4>,
+				[BLOCKS.HEADING_5]: (node: Block | Inline, children: ReactNode) => <h5 className="article__h5">{children}</h5>,
+				[BLOCKS.QUOTE]: (node: Block | Inline, children: ReactNode) => (
+					<blockquote className="article__blockquote">{children}</blockquote>
+				),
+				[BLOCKS.UL_LIST]: (node: Block | Inline, children: ReactNode) => <ul className="article__list">{children}</ul>,
+				[BLOCKS.OL_LIST]: (node: Block | Inline, children: ReactNode) => <ol className="article__list">{children}</ol>,
+				[BLOCKS.LIST_ITEM]: (node: Block | Inline, children: ReactNode) => (
+					<li className="article__item">{children}</li>
+				),
+				[BLOCKS.HR]: (node: Block | Inline, children: ReactNode) => <hr className="article__hr" />,
+				[INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
+					<a className="article__link" target="_blank" rel="noreferrer noopener" href={`${node.data.uri}`}>
+						{children}
+					</a>
+				),
+				[INLINES.ENTRY_HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
+					const entry = hyperLinksMap.get(node.data.target.sys.id);
+					return (
+						<Link href={`/blog/article/${entry?.__typename === "Post" ? entry.slug : null}`}>
+							<a className="article__link">{children}</a>
+						</Link>
+					);
+				},
+			},
+		};
+	}
+
 	return (
 		<>
 			<article className="article">
@@ -87,7 +181,7 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 						<span className="tag">{tag.name}</span>
 						<span className="time">{formatDate(sys.publishedAt)}</span>
 					</div>
-					<div className="article__picture">
+					<div className="article__preview">
 						<Image
 							src={previewImg.url}
 							alt={previewImg.title}
@@ -99,36 +193,7 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 							className="article__img"
 						/>
 					</div>
-					<p className="article__text">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam minima itaque corrupti veniam dignissimos.
-						Corporis, aperiam iure reiciendis voluptates error dignissimos ut soluta expedita amet molestias eius autem
-						blanditiis sapiente? Autem totam in ducimus earum rerum repellat sed possimus, praesentium maxime ut
-						consectetur optio commodi voluptas ad minus voluptatibus deleniti at aliquid voluptate aut fugit! Quod
-						pariatur assumenda impedit cumque.
-					</p>
-					<blockquote className="article__blockquote">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad voluptas quod adipisci esse, dignissimos
-						fugiat hic ab libero. Soluta.
-					</blockquote>
-					<p className="article__text">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam minima itaque corrupti veniam dignissimos.
-						Corporis, aperiam iure reiciendis voluptates error dignissimos ut soluta expedita amet molestias eius autem
-						blanditiis sapiente? Autem totam in ducimus earum rerum repellat sed possimus, praesentium maxime ut
-						consectetur optio commodi voluptas ad minus voluptatibus deleniti at aliquid voluptate aut fugit! Quod
-						pariatur assumenda impedit cumque.
-					</p>
-					<ul className="article__list">
-						<li className="article__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, odit!</li>
-						<li className="article__item">Lorem ipsum dolor sit amet.</li>
-						<li className="article__item">Lorem ipsum dolor sit.</li>
-						<li className="article__item">Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
-					</ul>
-					<ol className="article__list">
-						<li className="article__item">Lorem, ipsum dolor.</li>
-						<li className="article__item">Lorem, ipsum.</li>
-						<li className="article__item">Lorem ipsum dolor sit.</li>
-						<li className="article__item">Lorem ipsum dolor sit amet.</li>
-					</ol>
+					{documentToReactComponents(text.json, renderOptions(text.links))}
 					<div ref={disqusRef}>{comments && <DiscussionEmbed shortname="easyen-1" config={{ title }} />}</div>
 				</div>
 			</article>

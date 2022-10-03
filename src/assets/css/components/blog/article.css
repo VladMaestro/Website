@@ -10,11 +10,34 @@
 	margin: 0 0 20px 0;
 }
 
+.article__h2 {
+	font-size: 28px;
+	line-height: 34px;
+	margin: 0 0 20px 0;
+}
+
+.article__h3 {
+	font-size: 22px;
+	line-height: 28px;
+	margin: 0 0 20px 0;
+}
+
+.article__h4 {
+	font-size: 16px;
+	line-height: 22px;
+	margin: 0 0 20px 0;
+}
+
+.article__h5 {
+	font-size: 10px;
+	line-height: 16px;
+	margin: 0 0 20px 0;
+}
+
 .article__description {
 	font-size: 18px;
 	line-height: 26px;
 	margin: 0 0 20px 0;
-	text-align: justify;
 }
 
 .article__meta {
@@ -23,10 +46,23 @@
 	margin-bottom: 20px;
 }
 
-.article__picture {
+.article__preview {
 	position: relative;
 	aspect-ratio: 16 / 9;
 	width: 100%;
+	margin: 0 auto 40px auto;
+	border-radius: 10px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.article__preview > span {
+	border-radius: 10px;
+}
+
+.article__picture {
+	position: relative;
+	font-size: 0;
+	line-height: normal;
 	margin: 0 auto 40px auto;
 	border-radius: 10px;
 	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
@@ -43,7 +79,6 @@
 .article__text {
 	line-height: 26px;
 	margin: 0 0 30px 0;
-	text-align: justify;
 }
 
 .article__blockquote {
@@ -64,6 +99,19 @@
 	border-radius: 2px;
 }
 
+.article__hr {
+	margin-bottom: 20px;
+}
+
+.article__link {
+	color: var(--accent-light);
+	text-decoration: none;
+}
+
+.article__link:hover {
+	text-decoration: underline;
+}
+
 .article__list {
 	margin: 0 0 30px 0;
 	padding-left: 18px;
@@ -74,6 +122,26 @@
 	.article__title {
 		font-size: 36px;
 		line-height: 42px;
+	}
+
+	.article__h2 {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	.article__h3 {
+		font-size: 26px;
+		line-height: 32px;
+	}
+
+	.article__h4 {
+		font-size: 20px;
+		line-height: 26px;
+	}
+
+	.article__h5 {
+		font-size: 14px;
+		line-height: 20px;
 	}
 
 	.article__description {
@@ -101,10 +169,30 @@
 		line-height: 48px;
 	}
 
+	.article__h2 {
+		font-size: 38px;
+		line-height: 44px;
+	}
+
+	.article__h3 {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	.article__h4 {
+		font-size: 26px;
+		line-height: 32px;
+	}
+
+	.article__h5 {
+		font-size: 20px;
+		line-height: 26px;
+	}
+
 	.article__text,
 	.article__blockquote,
 	.article__list {
 		font-size: 20px;
-		line-height: 34px;
+		line-height: 32px;
 	}
 }
