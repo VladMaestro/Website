@@ -155,12 +155,14 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 				),
 				[BLOCKS.HR]: (node: Block | Inline, children: ReactNode) => <hr className="article__hr" />,
 				[BLOCKS.TABLE]: (node: Block | Inline, children: ReactNode) => (
-					<table className="article__table">{children}</table>
+					<table className="article__table">
+						<tbody>{children}</tbody>
+					</table>
 				),
+				[BLOCKS.TABLE_ROW]: (node: Block | Inline, children: ReactNode) => <tr className="article__tr">{children}</tr>,
 				[BLOCKS.TABLE_HEADER_CELL]: (node: Block | Inline, children: ReactNode) => (
 					<th className="article__th">{children}</th>
 				),
-				[BLOCKS.TABLE_ROW]: (node: Block | Inline, children: ReactNode) => <tr className="article__tr">{children}</tr>,
 				[BLOCKS.TABLE_CELL]: (node: Block | Inline, children: ReactNode) => <td className="article__td">{children}</td>,
 				[INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
 					<a className="article__link" target="_blank" rel="noreferrer noopener" href={`${node.data.uri}`}>
