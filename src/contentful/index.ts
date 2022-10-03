@@ -12,6 +12,8 @@ import {
 	GetPostsByTagQueryVariables,
 	MainPageQuery,
 	MainPageQueryVariables,
+	GetAllRecommendedPostsQuery,
+	GetAllRecommendedPostsQueryVariables,
 } from "../@types/contentfulSchema";
 
 import { apolloClient } from "./apolloClient";
@@ -160,6 +162,37 @@ export const getPostsByTagName = async (tagName: string | string[]) => {
 		variables: {
 			tagName: oneTagName,
 		},
+	});
+
+	return data;
+};
+
+export const getAllRecommendedPost = async () => {
+	const allRecommendedPost = gql`
+		query getAllRecommendedPosts {
+			postCollection(where: { recommended: true }) {
+				total
+				items {
+					title
+					slug
+					previewImg {
+						title
+						url
+					}
+					smallDescription
+					tag {
+						name
+					}
+					sys {
+						publishedAt
+					}
+				}
+			}
+		}
+	`;
+
+	const { data } = await apolloClient.query<GetAllRecommendedPostsQuery, GetAllRecommendedPostsQueryVariables>({
+		query: allRecommendedPost,
 	});
 
 	return data;

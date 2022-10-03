@@ -789,6 +789,11 @@ export type GetPostsByTagQueryVariables = Exact<{
 
 export type GetPostsByTagQuery = { __typename?: 'Query', postCollection: { __typename?: 'PostCollection', total: number, items: Array<{ __typename?: 'Post', title: string, slug: string, smallDescription: string, previewImg: { __typename?: 'Asset', title: string, url: string }, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any } }> } };
 
+export type GetAllRecommendedPostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllRecommendedPostsQuery = { __typename?: 'Query', postCollection: { __typename?: 'PostCollection', total: number, items: Array<{ __typename?: 'Post', title: string, slug: string, smallDescription: string, previewImg: { __typename?: 'Asset', title: string, url: string }, tag: { __typename?: 'Tag', name: string }, sys: { __typename?: 'Sys', publishedAt: any } }> } };
+
 export type GetAllPostsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 

@@ -1,53 +1,36 @@
 import { ReactElement } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { ParsedUrlQuery } from "querystring";
 
 import type { NextPageWithLayout } from "../_app";
 import { BlogLayout } from "../../Layouts/BlogLayout";
 import { MediumArticle, SmallArticle, BreadCrumbs } from "../../components";
 
-import { getAllTags, getPostsByTagName } from "../../contentful";
+import { getAllRecommendedPost } from "../../contentful";
 
-import { GetPostsByTagQuery } from "../../@types/contentfulSchema";
-
-export const getStaticPaths: GetStaticPaths = async () => {
-	const tags = await getAllTags();
-
-	return {
-		paths: tags.tagCollection.items.map((item) => ({ params: { tag: item.slug } })),
-		fallback: false,
-	};
-};
+import { GetAllRecommendedPostsQuery } from "../../@types/contentfulSchema";
 
 type Props = {
-	posts: GetPostsByTagQuery;
+	posts: GetAllRecommendedPostsQuery;
 };
 
-interface Params extends ParsedUrlQuery {
-	tag: string;
-}
-
-export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
-	const tagName = context.params!.tag;
-
-	const posts = await getPostsByTagName(tagName);
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	const posts = await getAllRecommendedPost();
 
 	return {
-		props: { posts, tagName },
+		props: { posts },
 	};
 };
 
-type TagProps = {
-	posts: GetPostsByTagQuery;
-	tagName: string;
+type RecommendedProps = {
+	posts: GetAllRecommendedPostsQuery;
 };
 
-const Tag: NextPageWithLayout<TagProps> = ({ posts, tagName }) => {
+const Recommended: NextPageWithLayout<RecommendedProps> = ({ posts }) => {
 	return (
 		<section className="tagSection" aria-labelledby="tagSectionTitle">
 			<div className="container">
 				<h1 className="tagSection__title" id="tagSectionTitle">
-					{posts.postCollection.items[0]?.tag.name || tagName.charAt(0).toUpperCase() + tagName.slice(1)}
+					Recommended
 				</h1>
 				<BreadCrumbs />
 				<div className="tagSection__container">
@@ -73,8 +56,8 @@ const Tag: NextPageWithLayout<TagProps> = ({ posts, tagName }) => {
 	);
 };
 
-Tag.getLayout = function getLayout(page: ReactElement) {
+Recommended.getLayout = function getLayout(page: ReactElement) {
 	return <BlogLayout>{page}</BlogLayout>;
 };
 
-export default Tag;
+export default Recommended;
