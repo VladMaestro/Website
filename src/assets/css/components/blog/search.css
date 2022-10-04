@@ -15,3 +15,10 @@
 .aa-Item {
 	cursor: auto;
 }
+
+@media screen and (max-width: 681px) {
+	.aa-DetachedSearchButton {
+		border-radius: 10px;
+		margin-bottom: 40px;
+	}
+}

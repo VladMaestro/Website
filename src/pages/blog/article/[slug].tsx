@@ -50,6 +50,7 @@ type ArticleProps = {
 
 const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 	const [comments, setComments] = useState(false);
+	const [scrollTop, setScrollTop] = useState(false);
 
 	const disqusRef = useRef<HTMLDivElement>(null);
 
@@ -80,6 +81,27 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 			if (disqusDiv) observer.unobserve(disqusDiv);
 		};
 	}, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
+	useEffect(() => {
+		const toggleScrollTop = () => {
+			if (window.pageYOffset > 500) {
+				setScrollTop(true);
+			} else {
+				setScrollTop(false);
+			}
+		};
+
+		window.addEventListener("scroll", toggleScrollTop);
+
+		return () => window.removeEventListener("scroll", toggleScrollTop);
+	});
 
 	function renderOptions(links: TextLinks) {
 		const assetMap = new Map<
@@ -185,6 +207,27 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 		<>
 			<article className="article">
 				<div className="article__container">
+					<button
+						className={`article__scrollTop ${scrollTop ? "article__scrollTop--visible" : null}`}
+						aria-label="Scroll to top"
+						onClick={scrollToTop}
+					>
+						<svg
+							aria-hidden="true"
+							focusable={false}
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="#000000"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<path d="M18 15l-6-6-6 6" />
+						</svg>
+					</button>
 					<h1 className="article__title">{title}</h1>
 					<p className="article__description">{smallDescription}</p>
 					<div className="article__meta">
