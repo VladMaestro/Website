@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import type { NextPageWithLayout } from "../_app";
 import { BlogLayout } from "../../Layouts/BlogLayout";
-import { AllSections, LastArticles, Subscribe, Tags, Toefl } from "../../components";
+import { AllSections, LastArticles, Search, Subscribe, Tags, Toefl } from "../../components";
 
 import { getFirst5PostsSlugs, getMainPageData } from "../../contentful";
 
@@ -28,6 +28,7 @@ type BlogProps = {
 const Blog: NextPageWithLayout<BlogProps> = ({ mainPageData }) => {
 	return (
 		<>
+			<Search />
 			<Tags data={mainPageData.tagCollection.items} />
 			<LastArticles posts={mainPageData.posts.items} recommendedPosts={mainPageData.recommended.items} />
 			<Toefl data={mainPageData.toefl.items} />

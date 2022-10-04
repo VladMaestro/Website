@@ -11,3 +11,4 @@ export * from "./Blog/BlogFooter";
 export * from "./Blog/AllSections";
 export * from "./Blog/Subscribe";
 export * from "./Blog/BreadCrumbs";
+export * from "./Blog/Search";
