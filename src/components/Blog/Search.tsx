@@ -23,7 +23,7 @@ export const Search: FC = () => {
 								searchClient,
 								queries: [
 									{
-										indexName: "articles",
+										indexName: process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!,
 										query,
 										params: {
 											hitsPerPage: 10,
