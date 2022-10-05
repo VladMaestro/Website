@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import { formatDate } from "../../utils/formatDate";
+import useFormattedDate from "../../hooks/useFormattedDate";
 
 import { SmallArticleType } from "../../@types/articles";
 
@@ -12,6 +12,8 @@ type SmallArticleProps = {
 };
 
 export const SmallArticle: FC<SmallArticleProps> = ({ underline, description, data }) => {
+	const date = useFormattedDate(data.sys.publishedAt);
+
 	return (
 		<article className={`smallArticle ${underline ? "smallArticle--underline" : ""}`}>
 			<h3 className="h3">
@@ -24,7 +26,7 @@ export const SmallArticle: FC<SmallArticleProps> = ({ underline, description, da
 			</p>
 			<div className="smallArticle__info">
 				<time dateTime="14-01-2022" className="time">
-					{formatDate(data.sys.publishedAt)}
+					{date}
 				</time>
 				<span className="tag">{data.tag.name}</span>
 			</div>

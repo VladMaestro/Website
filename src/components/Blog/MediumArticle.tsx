@@ -2,7 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { formatDate } from "../../utils/formatDate";
+import useFormattedDate from "../../hooks/useFormattedDate";
 
 import { mediumArticleType } from "../../@types/articles";
 
@@ -11,6 +11,8 @@ type MediumArticleProps = {
 };
 
 export const MediumArticle: FC<MediumArticleProps> = ({ data }) => {
+	const date = useFormattedDate(data.sys.publishedAt);
+
 	return (
 		<article className="mediumllArticle">
 			<div className="mediumllArticle__picture">
@@ -29,7 +31,7 @@ export const MediumArticle: FC<MediumArticleProps> = ({ data }) => {
 				/>
 			</div>
 			<time className="mediumllArticle__time time" dateTime="09-04-2022">
-				{formatDate(data.sys.publishedAt)}
+				{date}
 			</time>
 			<h3 className="h3">
 				<Link href={`/blog/article/${data.slug}`}>

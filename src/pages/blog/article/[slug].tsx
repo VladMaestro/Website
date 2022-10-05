@@ -11,8 +11,8 @@ import type { NextPageWithLayout } from "../../_app";
 import { BlogLayout } from "../../../Layouts/BlogLayout";
 import { Subscribe } from "../../../components";
 
+import useFormattedDate from "../../../hooks/useFormattedDate";
 import { getAllPostsSlugs, getPostBySlug } from "../../../contentful";
-import { formatDate } from "../../../utils/formatDate";
 
 import { TextLinks } from "../../../@types/articles";
 import { GetPostBySlugQuery } from "../../../@types/contentfulSchema";
@@ -55,6 +55,8 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 	const disqusRef = useRef<HTMLDivElement>(null);
 
 	const { title, smallDescription, previewImg, sys, tag, text } = post.postCollection.items[0];
+
+	const date = useFormattedDate(sys.publishedAt);
 
 	useEffect(() => {
 		const obserOptions = {
@@ -232,7 +234,7 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 					<p className="article__description">{smallDescription}</p>
 					<div className="article__meta">
 						<span className="tag">{tag.name}</span>
-						<span className="time">{formatDate(sys.publishedAt)}</span>
+						<span className="time">{date}</span>
 					</div>
 					<div className="article__preview">
 						<Image

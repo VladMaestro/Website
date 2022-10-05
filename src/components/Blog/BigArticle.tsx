@@ -2,14 +2,17 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import useFormattedDate from "../../hooks/useFormattedDate";
+
 import { bigArticleType } from "../../@types/articles";
-import { formatDate } from "../../utils/formatDate";
 
 type BigArticleProps = {
 	data: bigArticleType;
 };
 
 export const BigArticle: FC<BigArticleProps> = ({ data }) => {
+	const date = useFormattedDate(data.sys.publishedAt);
+
 	return (
 		<article className="bigArticle">
 			<div className="bigArticle__pictire">
@@ -35,7 +38,7 @@ export const BigArticle: FC<BigArticleProps> = ({ data }) => {
 					</Link>
 				</h1>
 				<p className="bigArticle__description">{data.smallDescription}</p>
-				<time className="time">{formatDate(data.sys.publishedAt)}</time>
+				<time className="time">{date}</time>
 			</div>
 		</article>
 	);
