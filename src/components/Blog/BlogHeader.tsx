@@ -7,7 +7,7 @@ export const BlogHeader: FC = () => {
 		<div className="container">
 			<header className="header header--blog">
 				<div className="header__container">
-					<Image src="/img/logo/easyen.png" height="50px" width="140" className="header__logo" alt="easyen" />
+					<Image src="/img/logo/easyen.png" height="50px" width="140" className="header__logo" alt="easyen" priority />
 					<nav className="navigation">
 						<ul className="navigation__list">
 							<li className="navigation__item">

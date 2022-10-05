@@ -8,7 +8,14 @@ export const BlogFooter: FC = () => {
 			<div className="container">
 				<div className="footer__container">
 					<div className="footer__part">
-						<Image src="/img/logo/easyen.png" height="40px" width="111" className="header__logo" alt="easyen" />
+						<Image
+							src="/img/logo/easyen.png"
+							height="40px"
+							width="111"
+							className="header__logo"
+							alt="easyen"
+							priority
+						/>
 						<nav className="navigation">
 							<ul className="navigation__list">
 								<li className="navigation__item">

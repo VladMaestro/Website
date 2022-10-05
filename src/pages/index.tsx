@@ -185,6 +185,7 @@ const Home: NextPage = () => {
 								layout="fill"
 								objectFit="cover"
 								alt="Vlad - English Teacher"
+								priority
 							/>
 						</div>
 					</div>
