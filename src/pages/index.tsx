@@ -924,6 +924,21 @@ const Home: NextPage = () => {
 											<a className="navigation__link">Blog</a>
 										</Link>
 									</li>
+									<li className="navigation__item">
+										<Link href="/legal/policy">
+											<a className="navigation__link">Privacy Policy</a>
+										</Link>
+									</li>
+									<li className="navigation__item">
+										<Link href="/legal/terms">
+											<a className="navigation__link">Terms of Use</a>
+										</Link>
+									</li>
+									<li className="navigation__item">
+										<Link href="/legal/refund">
+											<a className="navigation__link">Refund policy</a>
+										</Link>
+									</li>
 								</ul>
 							</nav>
 						</div>

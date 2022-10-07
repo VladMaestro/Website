@@ -12,3 +12,6 @@ export * from "./Blog/AllSections";
 export * from "./Blog/Subscribe";
 export * from "./Blog/BreadCrumbs";
 export * from "./Blog/Search";
+export * from "./Policy";
+export * from "./Terms";
+export * from "./Refund";
