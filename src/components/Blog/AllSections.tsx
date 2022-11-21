@@ -27,10 +27,16 @@ export const AllSections: FC<AllSectionsProps> = ({ grammar, usCulture, det, spe
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle data={grammar[0]} />
-							{grammar.slice(1).map((item) => (
-								<SmallArticle key={item.slug} data={item} />
-							))}
+							{grammar && grammar.length ? (
+								<>
+									<MediumArticle data={grammar[0]} />
+									{grammar.slice(1).map((item) => (
+										<SmallArticle key={item.slug} data={item} />
+									))}
+								</>
+							) : (
+								"Comming Soon"
+							)}
 						</div>
 					</section>
 					<section className="allSections__item" aria-labelledby="allSectionsTitle2">
@@ -42,10 +48,16 @@ export const AllSections: FC<AllSectionsProps> = ({ grammar, usCulture, det, spe
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle data={usCulture[0]} />
-							{usCulture.slice(1).map((item) => (
-								<SmallArticle key={item.slug} data={item} />
-							))}
+							{usCulture && usCulture.length ? (
+								<>
+									<MediumArticle data={usCulture[0]} />
+									{usCulture.slice(1).map((item) => (
+										<SmallArticle key={item.slug} data={item} />
+									))}
+								</>
+							) : (
+								"Comming Soon"
+							)}
 						</div>
 					</section>
 					<section className="allSections__item" aria-labelledby="allSectionsTitle3">
@@ -57,10 +69,16 @@ export const AllSections: FC<AllSectionsProps> = ({ grammar, usCulture, det, spe
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle data={det[0]} />
-							{det.slice(1).map((item) => (
-								<SmallArticle key={item.slug} data={item} />
-							))}
+							{det && det.length ? (
+								<>
+									<MediumArticle data={det[0]} />
+									{det.slice(1).map((item) => (
+										<SmallArticle key={item.slug} data={item} />
+									))}
+								</>
+							) : (
+								"Comming Soon"
+							)}
 						</div>
 					</section>
 					<section className="allSections__item" aria-labelledby="allSectionsTitle4">
@@ -72,10 +90,16 @@ export const AllSections: FC<AllSectionsProps> = ({ grammar, usCulture, det, spe
 							</Link>
 						</h2>
 						<div className="allSections__articles">
-							<MediumArticle data={speakingTips[0]} />
-							{speakingTips.slice(1).map((item) => (
-								<SmallArticle key={item.slug} data={item} />
-							))}
+							{speakingTips && speakingTips.length ? (
+								<>
+									<MediumArticle data={speakingTips[0]} />
+									{speakingTips.slice(1).map((item) => (
+										<SmallArticle key={item.slug} data={item} />
+									))}
+								</>
+							) : (
+								"Comming Soon"
+							)}
 						</div>
 					</section>
 				</div>
