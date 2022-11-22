@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useEffect, FC } from "react";
 
 import { serviceDataType } from "../@types/servicesData";
 
@@ -10,10 +10,10 @@ type ModalProps = {
 	data: serviceDataType;
 };
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, data }) => {
-	const wrapperRef = React.useRef<HTMLDivElement>(null);
+export const Modal: FC<ModalProps> = ({ isOpen, closeModal, data }) => {
+	const wrapperRef = useRef<HTMLDivElement>(null);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		let handleModalKeyboard: (event: KeyboardEvent) => void;
 
 		if (isOpen) {
@@ -45,7 +45,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, data }) => {
 		return () => document.removeEventListener("keydown", handleModalKeyboard);
 	}, [isOpen, closeModal]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (isOpen) {
 			wrapperRef.current?.querySelector("button")?.focus();
 		}
@@ -70,6 +70,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, data }) => {
 						</li>
 					))}
 				</ul>
+				{data.subtext ? <p className="modal__text">{data.subtext}</p> : null}
 				<button type="button" className="modal__close" onClick={closeModal}>
 					&#10540;
 				</button>

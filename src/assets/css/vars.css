@@ -11,7 +11,26 @@ body {
 
 :root {
 	--bg-color: hsl(0, 0%, 100%);
+	--secondary-bg: hsl(0, 0%, 97%);
+
 	--main-text: hsl(0, 0%, 0%);
- --accent: hsl(35, 100%, 63%);
+	--secondary-text: hsl(0, 0%, 83%);
+
+	--accent: hsl(35, 100%, 63%);
 	--accent-light: hsl(35, 100%, 73%);
+}
+
+.sr-only {
+	color: rgb(233, 233, 233);
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }

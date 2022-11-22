@@ -1,0 +1,14 @@
+overwrite: true
+schema:
+  - https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/${CONTENTFUL_ENVIRONMENT}:
+      headers:
+        Authorization: "Bearer ${CONTENTFUL_CD_API_KEY}"
+documents: "src/**/!(*.d).{ts,tsx}"
+generates:
+  src/@types/contentfulSchema.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      maybeValue: T
+      avoidOptionals: true

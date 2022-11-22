@@ -1,10 +1,23 @@
+import type { ReactElement, ReactNode } from "react";
 import Head from "next/head";
+import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
+import "@algolia/autocomplete-theme-classic";
 import "../assets/css/index.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
-	return (
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+	getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+	Component: NextPageWithLayout;
+};
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+	const getLayout = Component.getLayout ?? ((page) => page);
+
+	return getLayout(
 		<>
 			<Head>
 				<title>Easy_EN PREP</title>
@@ -27,9 +40,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 
-				<link rel="icon" href="img/favicon/favicon.ico" />
+				<link rel="icon" href="/img/favicon/favicon.ico" />
 
 				<meta name="theme-color" content="#ffffff" />
 			</Head>
@@ -37,5 +50,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 		</>
 	);
 }
-
-export default MyApp;

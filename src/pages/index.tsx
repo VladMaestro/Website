@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useState, useEffect, MouseEvent, ChangeEvent } from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
 
@@ -9,6 +9,7 @@ import { Modal } from "../components";
 
 import { servicesData, translation } from "../utils/translation";
 import { serviceDataType } from "../@types/servicesData";
+import Link from "next/link";
 
 const swiperOptions = {
 	spaceBetween: 30,
@@ -31,17 +32,17 @@ const swiperOptions = {
 };
 
 const Home: NextPage = () => {
-	const [modalIsOpen, setModal] = React.useState(false);
-	const [modalData, setModalData] = React.useState<serviceDataType>({
+	const [modalIsOpen, setModal] = useState(false);
+	const [modalData, setModalData] = useState<serviceDataType>({
 		title: "",
 		text: "",
 		price: [""],
 	});
-	const [languageSelect, setLanguageSelect] = React.useState("en");
-	const [calendar, setCalendar] = React.useState(false);
+	const [languageSelect, setLanguageSelect] = useState("en");
+	const [calendar, setCalendar] = useState(false);
 
-	const calendarSectionRef = React.useRef<HTMLElement>(null);
-	const languageSelectRef = React.useRef<HTMLSelectElement>(null);
+	const calendarSectionRef = useRef<HTMLElement>(null);
+	const languageSelectRef = useRef<HTMLSelectElement>(null);
 
 	const scrollToCalendar = () => {
 		scrollTo({
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
 		});
 	};
 
-	const openModal = (event: React.MouseEvent<HTMLButtonElement>) => {
+	const openModal = (event: MouseEvent<HTMLButtonElement>) => {
 		const serviceName = event.currentTarget.getAttribute("data-service");
 
 		if (serviceName) {
@@ -65,13 +66,13 @@ const Home: NextPage = () => {
 		setModal(false);
 	};
 
-	const languageSelectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+	const languageSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
 		const value = event.target.value;
 		localStorage.setItem("language", value);
 		setLanguageSelect(value);
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const languageType = localStorage.getItem("language") || "";
 		if (languageType) {
 			setLanguageSelect(languageType);
@@ -136,6 +137,11 @@ const Home: NextPage = () => {
 											{translation["linkCalendar"][languageSelect]}
 										</a>
 									</li>
+									<li className="navigation__item">
+										<Link href="/blog">
+											<a className="navigation__link">Blog</a>
+										</Link>
+									</li>
 								</ul>
 							</nav>
 						</div>
@@ -179,6 +185,7 @@ const Home: NextPage = () => {
 								layout="fill"
 								objectFit="cover"
 								alt="Vlad - English Teacher"
+								priority
 							/>
 						</div>
 					</div>
@@ -912,6 +919,26 @@ const Home: NextPage = () => {
 											{translation["linkCalendar"][languageSelect]}
 										</a>
 									</li>
+									<li className="navigation__item">
+										<Link href="/blog">
+											<a className="navigation__link">Blog</a>
+										</Link>
+									</li>
+									<li className="navigation__item">
+										<Link href="/legal/policy">
+											<a className="navigation__link">Privacy Policy</a>
+										</Link>
+									</li>
+									<li className="navigation__item">
+										<Link href="/legal/terms">
+											<a className="navigation__link">Terms of Use</a>
+										</Link>
+									</li>
+									<li className="navigation__item">
+										<Link href="/legal/refund">
+											<a className="navigation__link">Refund policy</a>
+										</Link>
+									</li>
 								</ul>
 							</nav>
 						</div>
@@ -925,6 +952,57 @@ const Home: NextPage = () => {
 								{translation["emailBtn"][languageSelect]}
 							</a>
 						</div>
+					</div>
+					<div className="footer__policy">
+						<p className="footer__text">All Trademarks are the property of their respective owners.</p>
+						<p className="footer__text">
+							TOEFL® and TOEFL IBT® are registered trademarks of the{" "}
+							<a className="footer__link" href="https://www.ets.org/" target="_blank" rel="noreferrer noopener">
+								Educational Testing Service (ETS)
+							</a>
+							. This site and its owners are not affiliated, approved, or endorsed by the ETS.
+						</p>
+						<p className="footer__text">
+							DUOLINGO® and DUOLINGO ENGLISH TEST® are registered trademarks of{" "}
+							<a
+								className="footer__link"
+								href="https://englishtest.duolingo.com/"
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								Duolingo, INC
+							</a>
+							. This site and its owners are not affiliated, approved, or endorsed by Duolingo, INC.
+						</p>
+						<p className="footer__text">
+							IELTS® and IELTS Online® are registered trademarks of{" "}
+							<a className="footer__link" href="https://www.cam.ac.uk/" target="_blank" rel="noreferrer noopener">
+								University of Cambridge
+							</a>
+							, the{" "}
+							<a
+								className="footer__link"
+								href="https://www.britishcouncil.org/"
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								British Council
+							</a>
+							, and{" "}
+							<a
+								className="footer__link"
+								href="https://www.idp.com/australia/"
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								IDP Education Australia
+							</a>
+							. This site and its owners are not affiliated, approved, or endorsed by the University of Cambridge ESOL,
+							the British Council, and IDP Education Australia.
+						</p>
+						<p className="footer__text">
+							While using this site, you agree to have read and accepted our terms of use, cookie, and privacy policy.
+						</p>
 					</div>
 				</div>
 			</footer>

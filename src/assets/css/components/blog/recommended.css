@@ -1,0 +1,27 @@
+.recommended__container {
+	display: grid;
+	gap: 25px;
+}
+
+@media screen and (min-width: 768px) {
+	.recommended {
+		flex: 0 0 270px;
+	}
+
+	.recommended__container {
+		position: sticky;
+		top: 10px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.recommended {
+		flex: 0 0 320px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.recommended {
+		flex: 0 0 270px;
+	}
+}

@@ -1,0 +1,50 @@
+.lastArticles {
+	margin-bottom: 40px;
+}
+
+.lastArticles__container {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.lastArticles__left {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+.lastArticles__wrapper {
+	display: grid;
+	gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.lastArticles__container {
+		flex-direction: row;
+	}
+
+	.lastArticles__left {
+		flex: 1;
+	}
+
+	.lastArticles__left > .mediumllArticle:last-child {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.lastArticles__wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.lastArticles__left > .mediumllArticle:last-child {
+		display: grid;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.lastArticles__wrapper {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

@@ -2,6 +2,7 @@ export type serviceDataType = {
 	title: string;
 	text: string;
 	price: string[];
+	subtext?: string;
 };
 
 export type servicesDataType = {

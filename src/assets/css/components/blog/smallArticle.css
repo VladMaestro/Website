@@ -1,0 +1,29 @@
+.smallArticle {
+	display: grid;
+	gap: 15px;
+}
+
+.smallArticle--underline:last-child {
+	border-bottom: none;
+}
+
+.smallArticle--underline {
+	padding-bottom: 15px;
+	border-bottom: 2px solid var(--secondary-text);
+}
+
+.smallArticle__info {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.smallArticle__text {
+	display: none;
+	margin: 0;
+}
+
+.smallArticle__text--visible {
+	display: block;
+}

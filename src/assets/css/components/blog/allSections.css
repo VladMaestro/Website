@@ -1,0 +1,32 @@
+.allSections {
+	padding: 60px 0 40px 0;
+}
+
+.allSections__container {
+	display: grid;
+	gap: 40px;
+}
+
+.allSections__item:last-child {
+	margin-bottom: 0;
+}
+
+.allSections__articles {
+	display: grid;
+	gap: 25px;
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.allSections__container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.allSections__container {
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 40px;
+		row-gap: 60px;
+	}
+}

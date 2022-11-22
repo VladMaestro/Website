@@ -4,25 +4,34 @@
 
 @import "./body.css";
 
+/* HOME */
 @import "./modal.css";
-
 @import "./preview.css";
 @import "./header.css";
 @import "./navigation.css";
 @import "./contacts.css";
 @import "./select.css";
 @import "./benefits.css";
-
 @import "./lesson.css";
-
 @import "./extra.css";
-
 @import "./author.css";
-
 @import "./services.css";
-
 @import "./slider.css";
-
 @import "./calendar.css";
-
 @import "./footer.css";
+
+/* BLOG */
+@import "./blog/blogTypography.css";
+@import "./blog/tags.css";
+@import "./blog/lastArticles.css";
+@import "./blog/recommended.css";
+@import "./blog/bigArticle.css";
+@import "./blog/mediumllArticle.css";
+@import "./blog/smallArticle.css";
+@import "./blog/toefl.css";
+@import "./blog/allSections.css";
+@import "./blog/subscribe.css";
+@import "./blog/tagSection.css";
+@import "./blog/breadCrumbs.css";
+@import "./blog/article.css";
+@import "./blog/search.css";

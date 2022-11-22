@@ -1,0 +1,34 @@
+.toefl {
+	background-color: var(--secondary-bg);
+	padding: 60px 0;
+}
+
+.toefl__arrow {
+	font-size: 30px;
+}
+
+.toefl__container {
+	display: grid;
+	gap: 30px;
+	margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+	.toefl__container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.toefl__container > .mediumllArticle:last-child {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.toefl__container {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	.toefl__container > .mediumllArticle:last-child {
+		display: grid;
+	}
+}
