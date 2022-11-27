@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Modal } from "../components";
+import { Seo, Modal } from "../components";
 
 import { servicesData, translation } from "../utils/translation";
 import { serviceDataType } from "../@types/servicesData";
@@ -108,6 +108,7 @@ const Home: NextPage = () => {
 
 	return (
 		<>
+			<Seo />
 			<Modal isOpen={modalIsOpen} closeModal={closeModal} data={modalData} />
 
 			<section className="preview section">
