@@ -1,3 +1,4 @@
+export * from "./Seo";
 export * from "./Modal";
 
 export * from "./Blog/BlogHeader";

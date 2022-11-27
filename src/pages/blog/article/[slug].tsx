@@ -9,7 +9,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import type { NextPageWithLayout } from "../../_app";
 import { BlogLayout } from "../../../Layouts/BlogLayout";
-import { Subscribe } from "../../../components";
+import { Seo, Subscribe } from "../../../components";
 
 import useFormattedDate from "../../../hooks/useFormattedDate";
 import { getAllPostsSlugs, getPostBySlug } from "../../../contentful";
@@ -207,6 +207,7 @@ const Article: NextPageWithLayout<ArticleProps> = ({ post }) => {
 
 	return (
 		<>
+			<Seo title={title} description={smallDescription} img={previewImg.url} />
 			<article className="article">
 				<div className="article__container">
 					<button

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import { NextPageWithLayout } from "../_app";
 import { BlogLayout } from "../../Layouts/BlogLayout";
-import { Policy, Refund, Terms } from "../../components";
+import { Policy, Refund, Seo, Terms } from "../../components";
 
 const Legal: NextPageWithLayout = () => {
 	const router = useRouter();
@@ -16,6 +16,7 @@ const Legal: NextPageWithLayout = () => {
 
 	return (
 		<>
+			<Seo />
 			{currentData === "policy" ? (
 				<Policy />
 			) : currentData === "terms" ? (
