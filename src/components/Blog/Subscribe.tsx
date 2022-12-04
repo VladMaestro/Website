@@ -80,7 +80,7 @@ export const Subscribe: FC = () => {
 						<button type="submit" className="button">
 							Subscribe
 						</button>
-						{loading && <p className="subscribe__info">{loading}</p>}
+						{loading && <p className="subscribe__info">Loading</p>}
 						{error && <p className="subscribe__info">{error}</p>}
 					</form>
 				)}
